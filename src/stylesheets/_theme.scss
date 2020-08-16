@@ -1,0 +1,77 @@
+/*
+ *  Theme
+ */
+
+
+/* Root */
+
+:root {
+  --theme-dark-primary: #1D1726;
+  --theme-light-primary: #F1EDFF;
+  
+  background-color: var(--theme-dark-primary);
+  color: var(--theme-light-primary);
+  font-family: 'Inter';
+}
+
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6,
+.u-text-medium,
+.u-text-large,
+.u-text-huge,
+.u-text-gigantic,
+.u-text-enormous {
+  font-family: 'InterDisplay';
+  font-weight: 400;
+  letter-spacing: .025em;
+}
+
+h5, h6,
+.u-text-medium,
+.u-text-large {
+  font-weight: 300;
+}
+
+@media only screen and ( max-width: 768px ) {
+  
+  h1,h2,h3,
+  .u-text-enormous,
+  .u-text-gigantic,
+  .u-text-huge {
+    font-size: 3rem;
+    line-height: 1.3020833333;
+  }
+
+}
+
+.u-text-accent::after {
+  background-image: url('./images/squigle-green.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 8px;
+  margin-top: 1rem;
+  width: 67px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* Backgrounds */
+
+.u-background-theme-dark {
+  background-color: var(--theme-dark-primary);
+}
+
+
+/* Filters */
+
+.u-filter-trippy {
+  mix-blend-mode: luminosity;
+}
