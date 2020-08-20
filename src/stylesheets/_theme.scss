@@ -8,10 +8,13 @@
 :root {
   --theme-dark-primary: #1D1726;
   --theme-light-primary: #F1EDFF;
+  --theme-font-primary: 'Metropolis';
+  --theme-font-heading: var(--theme-font-primary);
   
   background-color: var(--theme-dark-primary);
   color: var(--theme-light-primary);
-  font-family: 'Inter';
+  font-family: var(--theme-font-primary);
+  font-weight: normal;
 }
 
 
@@ -23,9 +26,9 @@ h1, h2, h3, h4, h5, h6,
 .u-text-huge,
 .u-text-gigantic,
 .u-text-enormous {
-  font-family: 'InterDisplay';
+  font-family: var(--theme-font-heading);
   font-weight: 400;
-  letter-spacing: .025em;
+  // letter-spacing: .025em;
 }
 
 h5, h6,
@@ -47,7 +50,7 @@ h5, h6,
 }
 
 .u-text-accent::after {
-  background-image: url('./images/squigle-green.svg');
+  background-image: url('../images/squigle-green.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   content: '';

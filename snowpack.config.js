@@ -5,6 +5,11 @@ module.exports = {
     webModulesUrl: 'modules'
   },
   devOptions: {},
+  installOptions: {
+    namedExports: [
+      'curtainsjs'
+    ]
+  },
   exclude: [
     '**/*.scss',
     '**/modules/*',
@@ -23,7 +28,7 @@ module.exports = {
     [
       '@snowpack/plugin-run-script',
       {
-        cmd: 'sass -I ./ src/stylesheets/main.scss:static/main.css --no-source-map',
+        cmd: 'sass -I ./ src/stylesheets/main.scss:static/stylesheets/main.css --no-source-map',
         watch: '$1 --watch'
       }
     ]

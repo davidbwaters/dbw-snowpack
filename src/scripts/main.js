@@ -14,7 +14,7 @@ render(
   html`
     <c-top-bar>
       <a slot="logo" href="/">
-        <img src=${logo} alt="logo" />
+        <img src="images/logo.svg" alt="logo" />
       </a>
       <a slot="link" href="#about">About</a>
       <a slot="link" href="#work">Work</a>
@@ -22,7 +22,7 @@ render(
     <c-video-hero halftone>
       <video slot="video" class="u-filter-trippy">
         <source
-          src="videos/mold-tint.mp4"
+          src="videos/mold-hq-mono.mp4"
           type="video/mp4"
         >
         <source 
@@ -37,7 +37,7 @@ render(
               <h1 class="u-text-accent">
               I Create Digital Solutions to Promote Growth.
               </h1>
-              <h3 class="u-text-large">
+              <h3 class="u-text-medium">
                 Hello, I’m David. I am a graphic designer, 
                 illustrator, and frontend web developer with
                 a passion for clean, functional design.
