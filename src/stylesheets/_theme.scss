@@ -8,13 +8,13 @@
 :root {
   --theme-dark-primary: #1D1726;
   --theme-light-primary: #F1EDFF;
-  --theme-font-primary: 'Metropolis';
-  --theme-font-heading: var(--theme-font-primary);
+  --theme-font-primary: 'aileron';
+  --theme-font-heading: 'aileron';
   
   background-color: var(--theme-dark-primary);
   color: var(--theme-light-primary);
   font-family: var(--theme-font-primary);
-  font-weight: normal;
+  font-weight: 400;
 }
 
 
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6,
 .u-text-gigantic,
 .u-text-enormous {
   font-family: var(--theme-font-heading);
-  font-weight: 400;
+  font-weight: 600;
   // letter-spacing: .025em;
 }
 
@@ -72,9 +72,29 @@ a {
   background-color: var(--theme-dark-primary);
 }
 
+.u-background-noise {
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250' %3Cfilter id='noise' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence baseFrequency='0.05' /%3E%3C/filter%3E%3Crect x='0' y='0' width='100%25' height='100%25' filter='url(%23noise)' fill='none'%3E%3C/svg%3E");
+}
+
 
 /* Filters */
 
 .u-filter-trippy {
   mix-blend-mode: luminosity;
+}
+
+
+/* Animations */
+
+@keyframes noise {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
 }

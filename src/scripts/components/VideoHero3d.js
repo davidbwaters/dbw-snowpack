@@ -1,12 +1,31 @@
-import { LitElement, html, css } from 'lit-element'
-import { Curtains } from 'curtainsjs'
-import { fragment, vertex } from '../shaders/warp.js'
+/*
+import * as THREE from 'three/src/Three.js'
 
+import RenderPass from 'three/examples/jsm/postprocessing/RenderPass'
+import ShaderPass from 'three/examples/jsm/postprocessing/ShaderPass'
+
+import { 
+  EffectComposer,
+  Pass
+} from 'three/examples/jsm/postprocessing/EffectComposer'
+*/
+
+import { LitElement, html, css } from 'lit-element'
+
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.119.1/src/Three.js'
+
+import { 
+  EffectComposer,
+  Pass
+} from 'three/examples/jsm/postprocessing/EffectComposer'
+
+import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.119.1/examples/jsm/postprocessing/RenderPass.js'
+import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.119.1/examples/jsm/postprocessing/ShaderPass.js'
+import { FilmPass } from 'https://cdn.jsdelivr.net/npm/three@0.119.1/examples/jsm/postprocessing/FilmPass.js'
+import colorShader from '../shaders/color.js'
 
 export class VideoHero extends LitElement {
-
   static get styles() {
-
     return css`
       :host {
         align-items: center;
@@ -18,237 +37,123 @@ export class VideoHero extends LitElement {
         width: 100%;
       }
       .c-video-hero__video {
-        height: 100%;
+        bottom: 0;
+        overflow: hidden;
         position: absolute;
-        width: 100%;
+        right: 0;
+        width: 1px;
       }
       .c-video-hero__canvas {
-        height: 100%;
+        opacity: 1;
         position: absolute;
-        width: 100%;
       }
       .c-video-hero__content {
         position: relative;
+        z-index: 2;
       }
-      .c-video-hero__video video {
+      .c-video-hero__overlay {
+        background-color: #1D1726;
         height: 100%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 56.25vw;
+        opacity: .5;
         position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 177.77777778vh;
+        width: 100%;
       }
-    `
-
+    `;
   }
 
   static get properties() {
-
     return {
-      banner: { type: String, attribute: true }
+      banner:  { type: String, attribute: true }
     }
-
-  }
-
-  constructor() {
-    super()
   }
 
   firstUpdated() {
 
     super.firstUpdated()
 
-    const lerp = (start, end, amt) => {
-      return (1 - amt) * start + amt * end
+    const scene = new THREE.Scene();
+    const aspectRatio = window.innerWidth/window.innerHeight
+    const camera = new THREE.PerspectiveCamera( 
+      75, aspectRatio, 0.1, 1000 
+    )
+    
+    const canvas = this.shadowRoot.querySelector('canvas')
+    const renderer = new THREE.WebGLRenderer({'canvas': canvas})
+
+    renderer.setSize( window.innerWidth, window.innerHeight )
+    
+    function onWindowResize(){
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize( window.innerWidth, window.innerHeight );
     }
 
-    const mousePosition = {
-      x: 0,
-      y: 0
-    }
-
-    const mouseLastPosition = {
-      x: 0,
-      y: 0
-    }
-
-    const deltas = {
-      max: 0,
-      applied: 0
-    }
-  
-    function handleMovement(e, plane) {
-
-      mouseLastPosition.x = mousePosition.x
-      mouseLastPosition.y = mousePosition.y
-
-      const mouse = {}
-
-      if (e.targetTouches) {
-
-        mouse.x = e.targetTouches[0].clientX
-        mouse.y = e.targetTouches[0].clientY
-      }
-      
-      else {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-      }
-
-      mousePosition.x = lerp( 
-        mousePosition.x, mouse.x, 0.3 
-      )
-
-      mousePosition.y = lerp( 
-        mousePosition.y, mouse.y, 0.3 
-      )
-
-      console.log(mouse)
-      
-      let mouseCoords = plane.mouseToPlaneCoords(
-        mousePosition.x, mousePosition.y
-      )
-      
-      plane.uniforms.mousePosition.value = [
-        mouseCoords.x, mouseCoords.y
-      ]
-
-      if (mouseLastPosition.x && mouseLastPosition.y) {
-
-        let delta = Math.sqrt( 
-          Math.pow(
-            mousePosition.x - mouseLastPosition.x, 2
-          ) + Math.pow(
-            mousePosition.y - mouseLastPosition.y, 2
-          )
-        ) / 30
-
-        delta = Math.min(4, delta)
-        
-        if (delta >= deltas.max) {
-          deltas.max = delta;
-        }
-
-      }
-
-    }
-
-    const planeElement = this.shadowRoot
-      .querySelector('.js-plane')
+    window.addEventListener( 'resize', onWindowResize, false );
 
     const video = this.querySelector('video')
-
     video.muted = true
-    video.loop = true
     video.autoplay = true
+    video.loop = true
+    
+    const texture = new THREE.VideoTexture( video )
 
-    planeElement.appendChild(video)
+    texture.minFilter = THREE.LinearFilter
+    texture.magFilter = THREE.LinearFilter
+    texture.format = THREE.RGBFormat
 
-    const params = {
-      vertexShader: vertex,
-      fragmentShader: fragment,
-      widthSegments: 20,
-      heightSegments: 20,
-      uniforms: {
-        resolution: { 
-          name: 'uResolution',
-          type: '2f',
-          value: [
-            planeElement.clientWidth, 
-            planeElement.clientHeight
-          ]
-        },
-        time: {
-          name: 'uTime',
-          type: '1f',
-          value: 0,
-        },
-        mousePosition: {
-          name: 'uMousePosition',
-          type: '2f',
-          value: [
-            mousePosition.x, 
-            mousePosition.y
-          ]
-        },
-        mouseMoveStrength: {
-          name: 'uMouseMoveStrength',
-          type: '1f',
-          value: 0,
-        }
-      }
+    const planeHeight = 10
+    const planeWidth = aspectRatio * planeHeight
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(planeWidth, planeHeight),
+      new THREE.MeshBasicMaterial({ map: texture })
+    )
+
+    scene.add(mesh)
+    camera.position.z = 5
+
+    const dist = camera.position.z - mesh.position.z
+
+    camera.fov = 2 * Math.atan(planeHeight / (2 * dist)) * (180 / Math.PI)
+    camera.updateProjectionMatrix()
+
+    const composer = new EffectComposer(renderer)
+    const renderPass = new RenderPass(scene, camera)
+
+    composer.addPass(renderPass)
+
+    const customPass = new ShaderPass(colorShader)
+    customPass.renderToScreen = true
+    composer.addPass(customPass)
+
+    const filmPass = new FilmPass(
+      0.2,    // noise intensity
+      0.2,    // scanline intensity
+      1200,    // scanline count
+      false,  // grayscale
+    )
+    filmPass.renderToScreen = true
+    composer.addPass(filmPass)
+
+    function animate() {
+      requestAnimationFrame( animate )
+      composer.render()
     }
-
-    const containerElement = this.shadowRoot.querySelector('.js-canvas')
-
-    const curtains = new Curtains({
-      container: containerElement,
-      watchScroll: false
-    })
-
-    curtains.onContextLost(function () {
-      webGLCurtain.restoreContext()
-    })
-
-    const plane = curtains.addPlane(planeElement, params)
-
-    plane.onReady(() => {
-
-      plane.setPerspective(35)
-      plane.playVideos()
-
-      containerElement.addEventListener('mousemove',
-        e => {
-          handleMovement(e, plane);
-        }
-      )
-
-      containerElement.addEventListener('touchmove',
-        e => {
-          handleMovement(e, plane);
-        }
-      )
-
-    })
-
-    plane.onRender(() => {
-
-      plane.uniforms.time.value++
-
-      deltas.applied += (deltas.max - deltas.applied) * 0.02
-      deltas.max += (0 - deltas.max) * 0.01
-
-      plane.uniforms.mouseMoveStrength.value =
-        deltas.applied
-
-    })
-
-    plane.onAfterResize(function () {
-
-      const planeBoundingRect = simplePlane.getBoundingRect()
-
-      plane.uniforms.resolution.value = [
-        planeBoundingRect.width, planeBoundingRect.height
-      ]
-
-    })
-
+    animate()
   }
+
 
   render() {
-
     return html`
-      <div class='c-video-hero__video js-plane'>
+      <div  class="c-video-hero__video">
+        <slot name="video"></slot>
       </div>
-      <div class='c-video-hero__canvas js-canvas'>
+      <canvas class="c-video-hero__canvas">
+      </canvas>
+      <div class="c-video-hero__content">
+        <slot name="content"></slot>
       </div>
-      <div class='c-video-hero__content'>
-        <slot name='content'></slot>
-      </div>
-      <div class='c-video-hero__overlay'></div>
-    `
+      <div class="c-video-hero__overlay"></div>
+    `;
   }
-
 }
