@@ -1,21 +1,6 @@
 /*
- *  Theme
+ *  Utilites
  */
-
-
-/* Root */
-
-:root {
-  --theme-dark-primary: #1D1726;
-  --theme-light-primary: #F1EDFF;
-  --theme-font-primary: 'aileron';
-  --theme-font-heading: 'aileron';
-  
-  background-color: var(--theme-dark-primary);
-  color: var(--theme-light-primary);
-  font-family: var(--theme-font-primary);
-  font-weight: 400;
-}
 
 
 /* Text */
@@ -69,7 +54,7 @@ a {
 /* Backgrounds */
 
 .u-background-theme-dark {
-  background-color: var(--theme-dark-primary);
+  background-color: var(--theme-dark);
 }
 
 .u-background-noise {

@@ -6,17 +6,9 @@ module.exports = {
     webModulesUrl: 'modules'
   },
   devOptions: {},
-  install: [
-    'three/examples/jsm/postprocessing/EffectComposer',
-    'three/examples/jsm/postprocessing/RenderPass',
-    'three/examples/jsm/postprocessing/ShaderPass',
-    'three/src/Three.js'
-  ],
+  install: [],
   installOptions: {
-    namedExports: [
-      'curtainsjs',
-      'three/examples/jsm/postprocessing/EffectComposer'
-    ]
+    namedExports: []
   },
   exclude: [
     '**/*.scss',

@@ -2591,6 +2591,14 @@ lit-element@^2.3.1:
   dependencies:
     lit-html "^1.1.1"
 
+lit-grid-layout@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/lit-grid-layout/-/lit-grid-layout-1.1.0.tgz#3f15e42ab4690db8370fb5075588f0ea886d696d"
+  integrity sha512-+wUeJLEw5rXTs7QtS1gDzgo/mQIoUiIGZBqBl+zL0rb+E/U4aDnMlAlz8FUn0lWDRXqACPxrO4Mb+nkQBUkR8w==
+  dependencies:
+    lit-element "^2.3.1"
+    lit-html "^1.2.1"
+
 lit-html@^1.1.1, lit-html@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.2.1.tgz#1fb933dc1e2ddc095f60b8086277d4fcd9d62cc8"
@@ -3669,6 +3677,11 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
+stickybits@^3.7.7:
+  version "3.7.7"
+  resolved "https://registry.yarnpkg.com/stickybits/-/stickybits-3.7.7.tgz#4e644022e7e7ce924d34fbbf7eff7d2f5d8c5dd3"
+  integrity sha512-w8slCLqIESiIl8sP3v9wXNWfzrPHPOg2W6tsCfTkStrtfMoFnk0LSHpUJC7xx1yhNEKpljZJYL9T8RkZkSdqpQ==
+
 string.prototype.trimend@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/string.prototype.trimend/-/string.prototype.trimend-1.0.1.tgz#85812a6b847ac002270f5808146064c995fb6913"
@@ -3783,11 +3796,6 @@ tar@^6.0.1, tar@^6.0.2:
     minizlib "^2.1.1"
     mkdirp "^1.0.3"
     yallist "^4.0.0"
-
-three@^0.119.1:
-  version "0.119.1"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.119.1.tgz#9d979a082c4cd9622af8e3498a8dfa026a619332"
-  integrity sha512-GHyh/RiUfQ5VTiWIVRRTANYoXc1PFB1y+jDVRTb649nif1uX1F06PT1TKU3k2+F/MN4UJ3PWvQB53fY2OqKqKw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"

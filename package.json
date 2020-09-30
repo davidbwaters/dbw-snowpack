@@ -19,9 +19,10 @@
     "core-js": "3",
     "curtainsjs": "^6.2.2",
     "lit-element": "^2.3.1",
+    "lit-grid-layout": "^1.1.0",
     "lit-html": "^1.2.1",
     "scrambling-letters": "^1.6.2",
-    "three": "^0.119.1",
+    "stickybits": "^3.7.7",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {

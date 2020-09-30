@@ -1,6 +1,7 @@
 /*
  *  Components - Top Bar
  */
+
 import { LitElement, html, css } from 'lit-element'
 
 export class TopBar extends LitElement {
@@ -16,8 +17,18 @@ export class TopBar extends LitElement {
         width: 100%;
         z-index: 2;
       }
-      ::slotted(a:not(:last-child)) {
-        margin-right: 1rem;
+      .c-top-bar__nav {
+        display: flex;
+        flex-direction: column;
+        font-size: 125%;
+      }
+      ::slotted([slot="logo"]) {
+        height: 100%;
+        width: 2rem;
+      }
+      ::slotted([slot="link"]) {
+        text-align: center;
+        width: 2rem;
       }
     `
 

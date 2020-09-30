@@ -1,4 +1,9 @@
 /*
+ *  Main
+ */
+@import '/fonts/fonts.css';
+@import '/icons/icons.css';
+/*
  *  Generic - Initialize
  */
 *,
@@ -1749,20 +1754,159 @@ small {
 }
 
 /*
- *  Theme
+ *  Elements - Base
  */
 /* Root */
 :root {
-  --theme-dark-primary: #1D1726;
-  --theme-light-primary: #F1EDFF;
-  --theme-font-primary: "aileron";
-  --theme-font-heading: "aileron";
-  background-color: var(--theme-dark-primary);
-  color: var(--theme-light-primary);
-  font-family: var(--theme-font-primary);
-  font-weight: 400;
+  --theme-dark-bg: #674ECA;
+  --theme-dark-text: #F1EDFF;
+  --theme-light: #F1EDFF;
+  --theme-muted: #777898;
+  --theme-font-primary: "gangster_grotesklight";
+  --theme-font-accent: "league_monoregular";
+  --theme-font-display: "syneextrabold";
+  --theme-font-heading: "synebold";
 }
 
+body {
+  background-color: var(--theme-dark-bg);
+  color: var(--theme-dark-text);
+  font-family: var(--theme-font-primary);
+}
+
+/*
+ *  Components - Hero
+ */
+.c-hero {
+  display: grid;
+  grid-template-rows: minmax();
+  height: 100vh;
+}
+
+.c-hero__upper {
+  align-content: center;
+  background-image: url("/images/Paint-Main-A.svg");
+  background-size: cover;
+  display: grid;
+  height: 66.66vh;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.c-hero__tagline,
+.c-hero__name,
+.c-hero__location {
+  position: relative;
+  z-index: 1;
+}
+
+.c-hero__tagline {
+  font-family: "syneextrabold";
+  font-size: 5vw;
+  line-height: 1.05;
+  margin-top: 37px;
+  text-transform: uppercase;
+  width: 66.66vw;
+}
+
+.c-hero__tagline-main {
+  position: relative;
+  z-index: 1;
+}
+
+.c-hero__tagline-accent-1,
+.c-hero__tagline-accent-2,
+.c-hero__tagline-accent-3 {
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #F1EDFF;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+.c-hero__tagline-accent-1 {
+  opacity: 0.6;
+  transform: translateY(0.4vw);
+}
+
+.c-hero__tagline-accent-2 {
+  opacity: 0.4;
+  transform: translateY(0.8vw);
+}
+
+.c-hero__tagline-accent-3 {
+  opacity: 0.2;
+  transform: translateY(1.2vw);
+}
+
+.c-hero__name,
+.c-hero__location {
+  display: block;
+  font-size: 0.75rem;
+  height: 5rem;
+  letter-spacing: 0.075em;
+  line-height: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  width: 66.66vh;
+}
+
+.c-hero__name {
+  left: 0;
+  text-align: right;
+  transform: rotate(90deg) translateY(-5rem);
+  transform-origin: top left;
+}
+
+.c-hero__location {
+  right: 0;
+  text-align: left;
+  transform: rotate(-90deg) translateY(-5rem);
+  transform-origin: top right;
+}
+
+.c-hero__paint {
+  animation: c-hero-paint 12s infinite;
+  background-image: url("/images/Paint-Main-B.svg");
+  background-size: cover;
+  height: 100%;
+  opacity: 0.04;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.c-hero__lower {
+  height: 33.33vh;
+  background-color: aliceblue;
+}
+
+@keyframes c-hero-paint {
+  0% {
+    opacity: 0.04;
+  }
+  25% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.96;
+  }
+  75% {
+    opacity: 0.96;
+  }
+  100% {
+    opacity: 0.04;
+  }
+}
+/*
+ *  Utilites
+ */
 /* Text */
 h1, h2, h3, h4, h5, h6,
 .u-text-medium,
@@ -1807,7 +1951,7 @@ a {
 
 /* Backgrounds */
 .u-background-theme-dark {
-  background-color: var(--theme-dark-primary);
+  background-color: var(--theme-dark);
 }
 
 .u-background-noise {
@@ -1852,6 +1996,3 @@ a {
     transform: translate(-10%, 10%);
   }
 }
-/*
- *  Main
- */

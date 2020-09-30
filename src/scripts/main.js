@@ -3,19 +3,20 @@
  */
 
 import { html, render } from 'lit-html'
-
-import { VideoHero } from './components/VideoHero3d.js'
-import { TopBar } from './components/TopBar.js'
 import WebFont from 'webfontloader'
 import Scrambler from 'scrambling-letters'
+import { TopBar } from './components/TopBar.js'
 
 WebFont.load({
   classes: false,
   custom: {
     families: [
-      'aileron'
+      'gangster_grotesklight',
+      'gangster_groteskregular',
+      'league_monoregular',
+      'synebold',
+      'syneextrabold'
     ],
-    urls: ['https://use.typekit.net/rcd4wxv.css'],
     timeout: 4000
   }
 })
@@ -26,45 +27,57 @@ Scrambler({
 })
 
 customElements.define('c-top-bar', TopBar)
-customElements.define('c-video-hero', VideoHero)
 
 render(
   html`
     <c-top-bar>
       <a slot="logo" href="/">
-        <img src="images/logo.svg" alt="logo" />
+        <img src="images/Logo.svg" alt="logo" />
       </a>
-      <a slot="link" href="#about">About</a>
-      <a slot="link" href="#work">Work</a>
+      <a slot="link" href="mailto:mrdavidbwaters@gmail.com">
+        <i class="c-icon c-icon--mail"></i>
+      </a>
+      <a slot="link" href="https://twitter.com/dbwatersdesigns">
+        <i class="c-icon c-icon--twitter"></i>
+      </a>
+      <a slot="link" href="https://dribbble.com/dbwatersdesigns">
+        <i class="c-icon c-icon--dribbble"></i>
+      </a>
+      <a slot="link" href="https://github.com/davidbwaters">
+        <i class="c-icon c-icon--github"></i>
+      </a>
     </c-top-bar>
-    <c-video-hero halftone>
-      <video slot="video" class="u-filter-trippy">
-        <source
-          src="videos/mold-hq-tint.mp4"
-          type="video/mp4"
-        >
-        <source 
-          src="videos/mold-hq-tint.webm"
-          type="video/webm"
-        >
-      </video>
-      <span slot="content">
-        <div class="o-wrapper">
-          <div class="o-layout o-layout--center">
-            <div class="o-layout--cell u-5/6">
-              <h1 class="u-text-accent">
-              I Create Digital Solutions to Promote Growth.
-              </h1>
-              <h3 class="u-text-large">
-                Hello, I’m David. I am a graphic designer, 
-                illustrator, and frontend web developer with
-                a passion for clean, functional design.
-              </h3>
-              </span>
-            </div>
+    <div class="c-hero">
+      <div class="c-hero__upper">
+        <div class="c-hero__paint"></div>
+        <div class="c-hero__tagline">
+        <div class="c-hero__tagline-main">
+            Artist & <br/>
+            Designer & <br/>
+            Developer
+          </div>
+          <div class="c-hero__tagline-accent-1">
+            Artist & <br/>
+            Designer & <br/>
+            Developer
+          </div>
+          <div class="c-hero__tagline-accent-2">
+            Artist & <br/>
+            Designer & <br/>
+            Developer
+          </div>
+          <div class="c-hero__tagline-accent-3">
+            Artist & <br/>
+            Designer & <br/>
+            Developer
           </div>
         </div>
-      </span>
-    </c-video-hero>
+        <div class="c-hero__name">David B. Waters</div>
+        <div class="c-hero__location">Charleston, SC</div>
+      </div>
+      <div class="c-hero__lower">
+
+      </div>
+    </div>
   `, document.body
 )
