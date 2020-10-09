@@ -11,9 +11,9 @@ export class GlitchImage extends LitElement {
     return css`
       :host {
         position: relative;
-        width: var(--glitch-width);
+        width: var( --glitch-image-glitch-width);
         max-width: 400px;
-        height: var(--glitch-height);
+        height: var( --glitch-image-glitch-height);
         max-height: calc(400px * 1.25);
         overflow: hidden;
         margin: 0 auto;
@@ -24,133 +24,133 @@ export class GlitchImage extends LitElement {
       }
 
       :host(.c-glitch-image--style-1) {
-        --gap-horizontal: 20px;
-        --gap-vertical: 2px;
-        --time-anim: 2.25s;
-        --blend-mode-1: none;
-        --blend-mode-2: none;
-        --blend-mode-3: none;
-        --blend-mode-4: none;
-        --blend-mode-5: none;
-        --blend-color-1: transparent;
-        --blend-color-2: transparent;
-        --blend-color-3: transparent;
-        --blend-color-4: transparent;
-        --blend-color-5: transparent;
+        --glitch-image-gap-horizontal: 20px;
+        --glitch-image-gap-vertical: 2px;
+        --glitch-image-time-anim: 2.25s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: none;
+        --glitch-image-blend-mode-3: none;
+        --glitch-image-blend-mode-4: none;
+        --glitch-image-blend-mode-5: none;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: transparent;
+        --glitch-image-blend-color-3: transparent;
+        --glitch-image-blend-color-4: transparent;
+        --glitch-image-blend-color-5: transparent;
       }
       
       :host(.c-glitch-image--style-2) {
-        --gap-horizontal: 5px;
-        --gap-vertical: 10px;
-        --time-anim: 2s;
-        --blend-mode-1: none;
-        --blend-mode-2: none;
-        --blend-mode-3: luminosity;
-        --blend-mode-4: none;
-        --blend-mode-5: none;
-        --blend-color-1: transparent;
-        --blend-color-2: transparent;
-        --blend-color-3: #4d8c60;
-        --blend-color-4: transparent;
-        --blend-color-5: #c9b09a;
+        --glitch-image-gap-horizontal: 5px;
+        --glitch-image-gap-vertical: 10px;
+        --glitch-image-time-anim: 2s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: none;
+        --glitch-image-blend-mode-3: luminosity;
+        --glitch-image-blend-mode-4: none;
+        --glitch-image-blend-mode-5: none;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: transparent;
+        --glitch-image-blend-color-3: #4d8c60;
+        --glitch-image-blend-color-4: transparent;
+        --glitch-image-blend-color-5: #c9b09a;
       }
       
       :host(.c-glitch-image--style-3) {
-        --gap-horizontal: 20px;
-        --gap-vertical: 2px;
-        --time-anim: 2.25s;
-        --blend-mode-1: none;
-        --blend-mode-2: none;
-        --blend-mode-3: multiply;
-        --blend-mode-4: none;
-        --blend-mode-5: none;
-        --blend-color-1: transparent;
-        --blend-color-2: transparent;
-        --blend-color-3: #af4563;
-        --blend-color-4: transparent;
-        --blend-color-5: transparent;
+        --glitch-image-gap-horizontal: 20px;
+        --glitch-image-gap-vertical: 2px;
+        --glitch-image-time-anim: 2.25s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: none;
+        --glitch-image-blend-mode-3: multiply;
+        --glitch-image-blend-mode-4: none;
+        --glitch-image-blend-mode-5: none;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: transparent;
+        --glitch-image-blend-color-3: #af4563;
+        --glitch-image-blend-color-4: transparent;
+        --glitch-image-blend-color-5: transparent;
       }
       
       :host(.c-glitch-image--style-4) {
-        --gap-horizontal: 5px;
-        --gap-vertical: 20px;
-        --time-anim: 5s;
-        --blend-mode-1: none;
-        --blend-mode-2: exclusion;
-        --blend-mode-3: hard-light;
-        --blend-mode-4: overlay;
-        --blend-mode-5: none;
-        --blend-color-1: transparent;
-        --blend-color-2: #52f1cd;
-        --blend-color-3: #525df1;
-        --blend-color-4: #f19b52;
-        --blend-color-5: transparent;
+        --glitch-image-gap-horizontal: 5px;
+        --glitch-image-gap-vertical: 20px;
+        --glitch-image-time-anim: 5s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: exclusion;
+        --glitch-image-blend-mode-3: hard-light;
+        --glitch-image-blend-mode-4: overlay;
+        --glitch-image-blend-mode-5: none;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: #52f1cd;
+        --glitch-image-blend-color-3: #525df1;
+        --glitch-image-blend-color-4: #f19b52;
+        --glitch-image-blend-color-5: transparent;
       }
       
       :host(.c-glitch-image--style-5) {
-        --gap-horizontal: 50px;
-        --gap-vertical: 100px;
-        --time-anim: 2.25s;
-        --blend-mode-1: none;
-        --blend-mode-2: none;
-        --blend-mode-3: none;
-        --blend-mode-4: overlay;
-        --blend-mode-5: overlay;
-        --blend-color-1: transparent;
-        --blend-color-2: transparent;
-        --blend-color-3: transparent;
-        --blend-color-4: #000;
-        --blend-color-5: #8d16f2;
+        --glitch-image-gap-horizontal: 50px;
+        --glitch-image-gap-vertical: 100px;
+        --glitch-image-time-anim: 2.25s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: none;
+        --glitch-image-blend-mode-3: none;
+        --glitch-image-blend-mode-4: overlay;
+        --glitch-image-blend-mode-5: overlay;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: transparent;
+        --glitch-image-blend-color-3: transparent;
+        --glitch-image-blend-color-4: #000;
+        --glitch-image-blend-color-5: #8d16f2;
       }
       
       :host(.c-glitch-image--style-6) {
-        --gap-horizontal: 3px;
-        --gap-vertical: 70px;
-        --time-anim: 2.25s;
-        --blend-mode-1: none;
-        --blend-mode-2: none;
-        --blend-mode-3: overlay;
-        --blend-mode-4: none;
-        --blend-mode-5: none;
-        --blend-color-1: transparent;
-        --blend-color-2: transparent;
-        --blend-color-3: rgba(255,255,255,0.2);
-        --blend-color-4: transparent;
-        --blend-color-5: transparent;
+        --glitch-image-gap-horizontal: 3px;
+        --glitch-image-gap-vertical: 70px;
+        --glitch-image-time-anim: 2.25s;
+        --glitch-image-blend-mode-1: none;
+        --glitch-image-blend-mode-2: none;
+        --glitch-image-blend-mode-3: overlay;
+        --glitch-image-blend-mode-4: none;
+        --glitch-image-blend-mode-5: none;
+        --glitch-image-blend-color-1: transparent;
+        --glitch-image-blend-color-2: transparent;
+        --glitch-image-blend-color-3: rgba(255,255,255,0.2);
+        --glitch-image-blend-color-4: transparent;
+        --glitch-image-blend-color-5: transparent;
       }
 
       .c-glitch-image__image {
-        background-blend-mode: var(--blend-mode-1);
-        background-color: var(--blend-color-1);        
+        background-blend-mode: var( --glitch-image-blend-mode-1);
+        background-color: var( --glitch-image-blend-color-1);        
         background-position: 50% 0;
         background-repeat: no-repeat;
         background-size: cover;
-        height: calc(100% + var(--gap-vertical) * 2);
-        left: calc(-1 * var(--gap-horizontal));
+        height: calc(100% + var( --glitch-image-gap-vertical) * 2);
+        left: calc(-1 * var( --glitch-image-gap-horizontal));
         position: absolute;
-        top: calc(-1 * var(--gap-vertical));
+        top: calc(-1 * var( --glitch-image-gap-vertical));
         transform: translate3d(0,0,0);        
-        width: calc(100% + var(--gap-horizontal) * 2);
+        width: calc(100% + var( --glitch-image-gap-horizontal) * 2);
       }
 
       .glitch__img:nth-child(2) {
-        background-color: var(--blend-color-2);
-        background-blend-mode: var(--blend-mode-2);
+        background-color: var( --glitch-image-blend-color-2);
+        background-blend-mode: var( --glitch-image-blend-mode-2);
       }
 
       .glitch__img:nth-child(3) {
-        background-color: var(--blend-color-3);
-        background-blend-mode: var(--blend-mode-3);
+        background-color: var( --glitch-image-blend-color-3);
+        background-blend-mode: var( --glitch-image-blend-mode-3);
       }
 
       .glitch__img:nth-child(4) {
-        background-color: var(--blend-color-4);
-        background-blend-mode: var(--blend-mode-4);
+        background-color: var( --glitch-image-blend-color-4);
+        background-blend-mode: var( --glitch-image-blend-mode-4);
       }
 
       .glitch__img:nth-child(5) {
-        background-color: var(--blend-color-5);
-        background-blend-mode: var(--blend-mode-5);
+        background-color: var( --glitch-image-blend-color-5);
+        background-blend-mode: var( --glitch-image-blend-mode-5);
       }
 
       .glitch__img:nth-child(n+2) {
@@ -162,18 +162,18 @@ export class GlitchImage extends LitElement {
       }
 
       .glitch:hover .glitch__img:nth-child(2) {
-        transform: translate3d(var(--gap-horizontal),0,0);
-        animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
+        transform: translate3d(var( --glitch-image-gap-horizontal),0,0);
+        animation: glitch-anim-1-horizontal var( --glitch-image-time-anim) infinite linear alternate;
       }
 
       .glitch:hover > .glitch__img:nth-child(3) {
-        transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
-        animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
+        transform: translate3d(calc(-1 * var( --glitch-image-gap-horizontal)),0,0);
+        animation: glitch-anim-2-horizontal var( --glitch-image-time-anim) infinite linear alternate;
       }
 
       .glitch:hover > .glitch__img:nth-child(4) {
-        transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
-        animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
+        transform: translate3d(0, calc(-1 * var( --glitch-image-gap-vertical)), 0) scale3d(-1,-1,1);
+        animation: glitch-anim-3-horizontal var( --glitch-image-time-anim) infinite linear alternate;
       }
 
       /* Hover flash animation on last image */
@@ -357,7 +357,7 @@ export class GlitchImage extends LitElement {
       @keyframes glitch-anim-flash {
         0% { 
           opacity: 0.2; 
-          transform: translate3d(var(--gap-horizontal), var(--gap-vertical), 0);
+          transform: translate3d(var( --glitch-image-gap-horizontal), var( --glitch-image-gap-vertical), 0);
         }
         33%, 100% { 
           opacity: 0;

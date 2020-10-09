@@ -15,8 +15,9 @@
 @use 'node_modules/@substructure/utilities-spacing';
 @use 'node_modules/@substructure/utilities-text-sizing';
 
-@use 'elements-base' as elements-base-local;
+@use 'theme' as elements-base-local;
 @use 'components-hero';
+@use 'elements-text' as elements-text-local;
 @use 'utilities';
 
 @import '/fonts/fonts.css';

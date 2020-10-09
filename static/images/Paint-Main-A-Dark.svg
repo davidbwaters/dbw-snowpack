@@ -13,7 +13,7 @@
    version="1.1"
    id="svg564"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="Paint-Main-B.svg">
+   sodipodi:docname="Paint-Main-A.svg">
   <defs
      id="defs558">
     <filter
@@ -102,7 +102,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3449569"
+     inkscape:zoom="1.2932987"
      inkscape:cx="161.51736"
      inkscape:cy="246.0345"
      inkscape:document-units="px"
@@ -123,7 +123,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -132,7 +132,7 @@
      id="layer1"
      inkscape:label="paint">
     <rect
-       style="fill:#6650c7;stroke-width:0.264583;filter:url(#filter230)"
+       style="fill:#6e4ece;stroke-width:0.264583;filter:url(#filter230)"
        id="rect615"
        width="800"
        height="800"

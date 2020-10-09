@@ -13,7 +13,7 @@
    version="1.1"
    id="svg564"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="Paint-Main-B.svg">
+   sodipodi:docname="Paint-Main-A-Light.svg">
   <defs
      id="defs558">
     <filter
@@ -31,7 +31,7 @@
          seed="0"
          result="result7"
          type="fractalNoise"
-         numOctaves="4"
+         numOctaves="3"
          baseFrequency="0.02" />
       <feComposite
          id="feComposite210"
@@ -102,19 +102,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3449569"
-     inkscape:cx="161.51736"
-     inkscape:cy="246.0345"
+     inkscape:zoom="1.1499271"
+     inkscape:cx="467.55564"
+     inkscape:cy="379.82958"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1252"
      inkscape:window-height="847"
-     inkscape:window-x="127"
-     inkscape:window-y="25"
+     inkscape:window-x="119"
+     inkscape:window-y="246"
      inkscape:window-maximized="0"
-     units="px" />
+     units="px"
+     inkscape:snap-text-baseline="true" />
   <metadata
      id="metadata561">
     <rdf:RDF>
@@ -123,7 +124,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -132,7 +133,15 @@
      id="layer1"
      inkscape:label="paint">
     <rect
-       style="fill:#6650c7;stroke-width:0.264583;filter:url(#filter230)"
+       style="fill:#b3b3e7;stroke-width:0.999999"
+       id="rect28"
+       width="800"
+       height="800"
+       x="0"
+       y="0"
+       inkscape:label="bg" />
+    <rect
+       style="opacity:0.75;mix-blend-mode:luminosity;fill:#aeb2e5;stroke-width:0.264583;filter:url(#filter230)"
        id="rect615"
        width="800"
        height="800"
