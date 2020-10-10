@@ -74,7 +74,12 @@ export class ThemeSwitch extends LitElement {
   }
 
   _handleChange() {
-    document.body.classList.toggle('is-in-light-mode')
+    const current = document.body.dataset.theme;
+
+    document.body.dataset.theme = current == 'dark' ?
+      'light' :
+      'dark'
+
   }
 
   render() {

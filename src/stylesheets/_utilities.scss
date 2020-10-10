@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6,
 .u-text-huge,
 .u-text-gigantic,
 .u-text-enormous {
-  font-family: var(--theme-font-heading);
+  font-family: var(--font-heading);
 }
 
 .u-text-accent::after {
@@ -27,10 +27,24 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+/* Seperators */
+
+.u-separator-dark,
+.u-separator-light {
+  border: none;
+  display: block;
+  height: 4rem;
+}
+
+.u-separator-dark {
+  box-shadow: inset 0 0 0 1px var(--theme-dark-overlay);
+}
+
+
 /* Theme Fill */
 
 .u-theme-fill {
-  fill: var(--theme-fill);
+  fill: var(--color-fg-primary);
 }
 
 

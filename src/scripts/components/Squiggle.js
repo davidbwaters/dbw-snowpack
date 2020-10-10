@@ -17,7 +17,7 @@ export class Squiggle extends LitElement {
 
       .c-squiggle__svg {
         display: block;
-        fill: var(--theme-accent);
+        fill: var(--color-fg-accent);
       }
     `
 

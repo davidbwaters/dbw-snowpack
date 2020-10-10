@@ -13,7 +13,7 @@
    version="1.1"
    id="svg564"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
-   sodipodi:docname="Paint-Main-A.svg">
+   sodipodi:docname="Paint-Main-A-Dark.svg">
   <defs
      id="defs558">
     <filter
@@ -103,15 +103,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2932987"
-     inkscape:cx="161.51736"
-     inkscape:cy="246.0345"
+     inkscape:cx="257.24932"
+     inkscape:cy="524.39247"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1252"
      inkscape:window-height="847"
-     inkscape:window-x="127"
+     inkscape:window-x="61"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      units="px" />
@@ -131,6 +131,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="paint">
+    <rect
+       style="fill:#6e4ece;stroke-width:2.74916"
+       id="rect48"
+       width="800"
+       height="800"
+       x="0"
+       y="0" />
     <rect
        style="fill:#6e4ece;stroke-width:0.264583;filter:url(#filter230)"
        id="rect615"

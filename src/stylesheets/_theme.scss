@@ -6,42 +6,48 @@
 /* Root */
 
 :root {
-  --theme-font-primary: 'gangster_groteskregular';
-  --theme-font-accent: 'league_monoregular';
-  --theme-font-display: 'syneextrabold';
-  --theme-font-heading: 'synebold';
+  --spacing-responsive-x: calc(.25rem + 1vw);
+  --spacing-responsive-y: calc(.25rem + 1vh);
+
+  --font-primary: 'gangster_groteskregular';
+  --font-accent: 'league_monoregular';
+  --font-display: 'syneextrabold';
+  --font-heading: 'synebold';
 
   --theme-dark-bg: #6E4ECE;
-  --theme-dark-fill: #F1EDFF;
+  --theme-dark-fg-primary: #F1EDFF;
   --theme-dark-accent: #95D6EB;
   --theme-dark-overlay: rgba(0,0,0,0.04);
 
   --theme-light-bg: #B3B3E7;
-  --theme-light-fill: #342469;
+  --theme-light-fg-primary: #342469;
   --theme-light-accent: #6E4ECE;
   --theme-light-overlay: rgba(255,255,255,.04);
 
-  --theme-bg: var(--theme-dark-bg);
-  --theme-fill:var(--theme-dark-fill);
-  --theme-accent: var(--theme-dark-accent);
-  --theme-overlay: var(--theme-dark-overlay);
-
-  --theme-default-opacity: 1;
-  --theme-alt-opacity: 0;
+  --theme-dark-opacity: 0;
+  --theme-light-opacity: 0;
 }
 
-.is-in-light-mode {
-  --theme-bg: var(--theme-light-bg);
-  --theme-fill:var(--theme-light-fill);
-  --theme-accent: var(--theme-light-accent);
-  --theme-overlay: var(--theme-light-overlay);
+[data-theme=dark] {
+  --color-bg-primary: var(--theme-dark-bg);
+  --color-fg-primary:var(--theme-dark-fg-primary);
+  --color-fg-accent: var(--theme-dark-accent);
+  --color-bg-overlay: var(--theme-dark-overlay);
 
-  --theme-default-opacity: 0;
-  --theme-alt-opacity: 1;
+  --theme-dark-opacity: 1;
+}
+
+[data-theme=light] {
+  --color-bg-primary: var(--theme-light-bg);
+  --color-fg-primary:var(--theme-light-fg-primary);
+  --color-fg-accent: var(--theme-light-accent);
+  --color-bg-overlay: var(--theme-light-overlay);
+
+  --theme-light-opacity: 1;
 }
 
 body {
-  background-color: var(--theme-bg);
-  color: var(--theme-fill);
-  font-family: var(--theme-font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-fg-primary);
+  font-family: var(--font-primary);
 }

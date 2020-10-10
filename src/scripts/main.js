@@ -114,8 +114,8 @@ render(
           <i class="c-icon c-icon--switch"></i>
         </c-theme-switch>
         <div class="c-hero__availability">
+          <i class="c-icon c-icon--hand u-animation-wave"></i>
           <span>
-            <i class="c-icon c-icon--hand u-animation-wave"></i>
             Available Now!
           </span>
         </div>
