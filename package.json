@@ -17,9 +17,7 @@
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.4",
     "core-js": "3",
-    "curtainsjs": "^6.2.2",
     "lit-element": "^2.3.1",
-    "lit-grid-layout": "^1.1.0",
     "lit-html": "^1.2.1",
     "scrambling-letters": "^1.6.2",
     "stickybits": "^3.7.7",
@@ -52,6 +50,7 @@
     "legacy-bundle-snowpack-plugin": "^1.0.1",
     "prettier": "^2.0.5",
     "sass": "^1.26.10",
-    "snowpack": "^2.7.7"
+    "snowpack": "^2.7.7",
+    "stylelint": "^13.7.2"
   }
 }

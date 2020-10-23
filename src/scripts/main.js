@@ -27,17 +27,13 @@ WebFont.load({
   }
 })
 
-Scrambler({
-  target: '[data-scrambler]',
-  speed: 50
-})
 
 
 render(
   html`
     <c-top-bar>
       <a slot="logo" href="/">
-        <svg class="u-theme-fill">
+        <svg class="u-theme-fill" width="30" height="24">
           <title>David B. Waters Logo</title>
           <path
             d="M 6,0 V 24 H 0 V 0 Z m 24,12 v 6 l -6,6 V 12 Z M 18,0 v 18 l -6,6 V 0 Z m 12,0 v 6 l -6,6 V 0 Z"
@@ -63,9 +59,15 @@ render(
         <div class="c-hero__paint-light"></div>
         <div class="c-hero__tagline">
           <div class="c-hero__tagline-main">
-            Artist & <br/>
-            Designer & <br/>
-            Developer
+            <span  data-scrambler="true">
+              Artist & 
+            </span><br/>
+            <span  data-scrambler="true">
+              Designer & 
+            </span><br/>
+            <span  data-scrambler="true">
+              Developer
+            </span>
           </div>
           <div class="c-hero__tagline-accent-1">
             Artist & <br/>
@@ -88,7 +90,7 @@ render(
       </div>
       <div class="c-hero__lower">
         <div class="c-hero__me"></div>
-        <div class="c-hero__name-stylized u-pattern-noise-background">
+        <div class="c-hero__name-stylized u-overlay-noise u-bg-pattern-diagonal">
           <div class="c-hero__name-stylized-letter">D</div>
           <div class="c-hero__name-stylized-letter">A</div>
           <div class="c-hero__name-stylized-letter">V</div>
@@ -120,11 +122,20 @@ render(
           </span>
         </div>
         <div class="c-hero__cta">
+          <button class="c-button">Contact</button>
+          <span>Start Your Project!</span>
         </div>
         <div class="c-hero__arrow">
         </div>
-        <hr class="u-separator-dark">
+        <hr class="u-separator-primary c-hero__bottom">
       </footer>
     </div>
   `, document.body
 )
+
+
+Scrambler({
+  target: '[data-scrambler]',
+  random: [1000,1000],
+  speed: 60
+})

@@ -93,14 +93,14 @@
    inkscape:groupmode="layer"
    id="layer1"
    inkscape:label="noise"><rect
-     style="opacity:0.4;mix-blend-mode:lighten;fill:#6e4ece;stroke-width:0.999999;filter:url(#filter904)"
+     style="opacity:0.8;mix-blend-mode:lighten;fill:#6e4ece;stroke-width:0.999999;filter:url(#filter904)"
      id="rect138"
      width="600"
      height="600"
      x="0"
      y="0"
      inkscape:label="noise-l2" /><rect
-     style="opacity:0.6;mix-blend-mode:darken;fill:#6e4ece;stroke-width:0.999999;filter:url(#filter322)"
+     style="opacity:0.4;mix-blend-mode:darken;fill:#6e4ece;stroke-width:0.999999;filter:url(#filter322)"
      id="rect320"
      width="600"
      height="600"

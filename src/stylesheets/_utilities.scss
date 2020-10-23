@@ -29,15 +29,11 @@ h1, h2, h3, h4, h5, h6,
 
 /* Seperators */
 
-.u-separator-dark,
-.u-separator-light {
+.u-separator-primary,
+.u-separator-alternate {
   border: none;
-  display: block;
-  height: 4rem;
-}
-
-.u-separator-dark {
-  box-shadow: inset 0 0 0 1px var(--theme-dark-overlay);
+  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-primary);
+  width: 100%;
 }
 
 
@@ -50,6 +46,38 @@ h1, h2, h3, h4, h5, h6,
 
 /* Backgrounds & Overlays */
 
+.u-bg-pattern-diagonal {
+  background-image: linear-gradient(
+    -45deg,
+    transparent                     000.00%,
+    transparent                     043.74%,
+    var(--color-bg-pattern-primary) 043.75%,
+    var(--color-bg-pattern-primary) 056.25%,
+    transparent                     056.26%,
+    transparent                     100.00%
+  );
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: .275rem .275rem;
+}
+
+.u-bg-pattern-diagonal-tight,
+.u-separator-primary {
+  background-image: linear-gradient(
+    -45deg,
+    transparent                     000.00%,
+    transparent                     037.49%,
+    var(--color-bg-pattern-primary) 037.50%,
+    var(--color-bg-pattern-primary) 062.5%,
+    transparent                     062.51%,
+    transparent                     100.00%
+  );
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: .225rem .225rem;
+}
+
+
 .u-background-noise,
 .u-overlay-noise {
   overflow: hidden;
@@ -59,7 +87,7 @@ h1, h2, h3, h4, h5, h6,
 
 .u-background-noise::before,
 .u-overlay-noise::before {
-  animation: noise .5s infinite;
+  animation: noise .4s infinite;
   background-repeat: repeat;
   background-size: 400px auto;
   content: '';
@@ -71,15 +99,15 @@ h1, h2, h3, h4, h5, h6,
   width: 200%;
 }
 
-.u-pattern-noise-background::before {
+.u-bg-noise-background::before {
   background-image: url("/images/Noise-Main-Solid.svg");
   opacity: 0.8;
   z-index: -1;
 }
 
-.u-pattern-noise-overlay::before {
+.u-overlay-noise::before {
   background-image: url("/images/Noise-Main-Clear.svg");
-  opacity: 0.6;
+  opacity: 0.4;
   pointer-events: none;
   z-index: 1;
 }

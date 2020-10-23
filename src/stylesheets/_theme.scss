@@ -6,48 +6,45 @@
 /* Root */
 
 :root {
+  --spacing-unit: .25rem;
   --spacing-responsive-x: calc(.25rem + 1vw);
   --spacing-responsive-y: calc(.25rem + 1vh);
 
-  --font-primary: 'gangster_groteskregular';
-  --font-accent: 'league_monoregular';
+  --font-primary: 'gangster_grotesklight';
+  --font-accent:  'league_monoregular';
   --font-display: 'syneextrabold';
   --font-heading: 'synebold';
 
-  --theme-dark-bg: #6E4ECE;
-  --theme-dark-fg-primary: #F1EDFF;
-  --theme-dark-accent: #95D6EB;
-  --theme-dark-overlay: rgba(0,0,0,0.04);
-
-  --theme-light-bg: #B3B3E7;
-  --theme-light-fg-primary: #342469;
-  --theme-light-accent: #6E4ECE;
-  --theme-light-overlay: rgba(255,255,255,.04);
-
-  --theme-dark-opacity: 0;
+  --theme-dark-opacity:  0;
   --theme-light-opacity: 0;
 }
 
-[data-theme=dark] {
-  --color-bg-primary: var(--theme-dark-bg);
-  --color-fg-primary:var(--theme-dark-fg-primary);
-  --color-fg-accent: var(--theme-dark-accent);
-  --color-bg-overlay: var(--theme-dark-overlay);
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg-primary);
+  font-family: var(--font-primary);
+}
 
+body[data-theme=dark] {
+  --color-bg: #6E4ECE;
+  --color-fg-primary: #F1EDFF;
+  --color-fg-accent: #95D6EB;
+  --color-fg-subtle-primary: #46378F;
+  --color-fg-subtle-alternate: #897DD1;
+  --color-bg-pattern-primary: rgba(0,0,0,.25);
+  --color-bg-pattern-alternate: rgba(255,255,255,.25);
+  --color-bg-overlay-primary: rgba(0,0,0,0.04);
   --theme-dark-opacity: 1;
 }
 
-[data-theme=light] {
-  --color-bg-primary: var(--theme-light-bg);
-  --color-fg-primary:var(--theme-light-fg-primary);
-  --color-fg-accent: var(--theme-light-accent);
-  --color-bg-overlay: var(--theme-light-overlay);
-
+body[data-theme=light] {
+  --color-bg: #B3B3E7;
+  --color-fg-primary: #342469;
+  --color-fg-accent: #6E4ECE;
+  --color-fg-subtle-primary: #46378F;
+  --color-fg-subtle-alternate: #46378F;
+  --color-bg-pattern-primary: rgba(0,0,0,.25);
+  --color-bg-pattern-alternate: rgba(0,0,0,.25);
+  --color-bg-overlay-primary: rgba(255,255,255,.04);
   --theme-light-opacity: 1;
-}
-
-body {
-  background-color: var(--color-bg-primary);
-  color: var(--color-fg-primary);
-  font-family: var(--font-primary);
 }

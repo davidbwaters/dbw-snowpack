@@ -14,9 +14,9 @@ export class ThemeSwitch extends LitElement {
       }
 
       :host {
-        --theme-switch-border: #46378F;
-        --theme-switch-bg: #342867;
-        --theme-switch-switch-border: #342867;
+        --theme-switch-border: var(--color-fg-subtle-primary);
+        --theme-switch-bg: var(--color-fg-subtle-primary);
+        --theme-switch-switch-border: rgba(0,0,0,.8);
         --theme-switch-switch: white;
 
         align-content: center;
