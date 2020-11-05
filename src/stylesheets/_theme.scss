@@ -11,7 +11,8 @@
   --spacing-responsive-y: calc(.25rem + 1vh);
 
   --font-primary: 'gangster_grotesklight';
-  --font-accent:  'league_monoregular';
+  --font-primary-medium: 'gangster_groteskregular';
+  --font-accent:  'league_monolight';
   --font-display: 'syneextrabold';
   --font-heading: 'synebold';
 
@@ -25,7 +26,7 @@ body {
   font-family: var(--font-primary);
 }
 
-body[data-theme=dark] {
+[data-theme=dark] {
   --color-bg: #6E4ECE;
   --color-fg-primary: #F1EDFF;
   --color-fg-accent: #95D6EB;
@@ -37,7 +38,7 @@ body[data-theme=dark] {
   --theme-dark-opacity: 1;
 }
 
-body[data-theme=light] {
+[data-theme=light] {
   --color-bg: #B3B3E7;
   --color-fg-primary: #342469;
   --color-fg-accent: #6E4ECE;

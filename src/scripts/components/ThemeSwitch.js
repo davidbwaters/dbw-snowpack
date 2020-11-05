@@ -30,6 +30,7 @@ export class ThemeSwitch extends LitElement {
       }
 
       .c-theme-switch__label {
+        cursor: pointer;
         position: relative;
       }
       

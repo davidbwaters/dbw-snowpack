@@ -88,21 +88,45 @@ render(
         <div class="c-hero__name">David B. Waters</div>
         <div class="c-hero__location">Charleston, SC</div>
       </div>
-      <div class="c-hero__lower">
+      <div class="c-hero__lower u-overlay-noise ">
         <div class="c-hero__me"></div>
-        <div class="c-hero__name-stylized u-overlay-noise u-bg-pattern-diagonal">
-          <div class="c-hero__name-stylized-letter">D</div>
-          <div class="c-hero__name-stylized-letter">A</div>
-          <div class="c-hero__name-stylized-letter">V</div>
-          <div class="c-hero__name-stylized-letter">I</div>
-          <div class="c-hero__name-stylized-letter">D</div>
-          <div class="c-hero__name-stylized-letter">B</div>
-          <div class="c-hero__name-stylized-letter">W</div>
-          <div class="c-hero__name-stylized-letter">A</div>
-          <div class="c-hero__name-stylized-letter">T</div>
-          <div class="c-hero__name-stylized-letter">E</div>
-          <div class="c-hero__name-stylized-letter">R</div>
-          <div class="c-hero__name-stylized-letter">S</div>
+        <div class="c-hero__name-stylized u-bg-pattern-diagonal">
+          <div class="c-hero__name-stylized-letter">
+            D
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            A
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            V
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            I
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            D
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            B
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            W
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            A
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            T
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            E
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            R
+          </div>
+          <div class="c-hero__name-stylized-letter">
+            S
+          </div>
         </div>
         <div class="c-hero__heading">
           <h2 class="u-text-huge">
@@ -111,7 +135,7 @@ render(
           </h2>
         </div>
       </div>
-      <footer class="c-hero__footer">
+      <footer class="c-hero__footer u-bg-noise">
         <c-theme-switch>
           <i class="c-icon c-icon--switch"></i>
         </c-theme-switch>
@@ -122,7 +146,7 @@ render(
           </span>
         </div>
         <div class="c-hero__cta">
-          <button class="c-button">Contact</button>
+          <a class="c-button" href="mailto:mrdavidbwaters@gmail.com">Contact</a>
           <span>Start Your Project!</span>
         </div>
         <div class="c-hero__arrow">
@@ -130,6 +154,71 @@ render(
         <hr class="u-separator-primary c-hero__bottom">
       </footer>
     </div>
+    <section>
+      <header class="u-padding-vertical-huge u-bg-noise u-text-center">
+        <h3 class="u-text-gigantic u-text-display u-text-uppercase u-text-outline">
+          Skills
+        </h3>
+        <c-squiggle></c-squiggle>
+      </header>
+      <div class="u-border-vertical-accent-alternate u-padding-vertical-large u-padding-horizontal-large u-text-center u-bg-noise">
+        Skills, tools of the trade, and technologies I enjoy working with.
+      </div>
+      <ul class="c-skill-list">
+        <li class="c-skill-list-skill">
+          <img class="c-skill-list-image" src="images/Elephant.png" alt="elephant">
+          <div class="c-skill-list-text">
+            <h4 class="u-text-title">
+              Web Platform
+            </h4>
+            <span class="c-skill-list-gap"></span>
+            <span class="c-skill-list-number u-text-title">01</span>
+            <span class="c-skill-list-description">
+              Web Components, Applications, #UseThePlatform
+            </span>
+          </div>
+        </li>
+        <li class="c-skill-list-skill">
+          <img class="c-skill-list-image" src="images/Lion.png" alt="elephant">
+          <div class="c-skill-list-text">
+            <h4 class="u-text-title">
+              Design
+            </h4>
+            <span class="c-skill-list-gap"></span>
+            <span class="c-skill-list-number u-text-title">02</span>
+            <span class="c-skill-list-description">
+              Figma, Sketch, Adobe CS**
+            </span>
+          </div>
+        </li>
+        <li class="c-skill-list-skill">
+          <img class="c-skill-list-image" src="images/Squirrel.png" alt="elephant">
+          <div class="c-skill-list-text">
+            <h4 class="u-text-title">
+              Development
+            </h4>
+            <span class="c-skill-list-gap"></span>
+            <span class="c-skill-list-number u-text-title">03</span>
+            <span class="c-skill-list-description">
+              JS/ES*, Node.js, Jamstack
+            </span>
+          </div>
+        </li>
+        <li class="c-skill-list-skill">
+          <img class="c-skill-list-image" src="images/Camel.png" alt="elephant">
+          <div class="c-skill-list-text">
+            <h4 class="u-text-title">
+              Consultation
+            </h4>
+            <span class="c-skill-list-gap"></span>
+            <span class="c-skill-list-number u-text-title">04</span>
+            <span class="c-skill-list-description">
+              Not sure where to start? I can help!
+            </span>
+          </div>
+        </li>
+      </ul>
+    </section>
   `, document.body
 )
 

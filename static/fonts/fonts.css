@@ -20,9 +20,9 @@
 }
 
 @font-face {
-  font-family: "league_monoregular";
-  src: url("leaguemono-regular-webfont.woff2") format("woff2"),
-       url("leaguemono-regular-webfont.woff") format("woff");
+  font-family: "league_monolight";
+  src: url("leaguemono-light-webfont.woff2") format("woff2"),
+       url("leaguemono-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

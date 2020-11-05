@@ -8,26 +8,62 @@
 h1, h2, h3, h4, h5, h6,
 .u-text-medium,
 .u-text-large,
-.u-text-huge,
-.u-text-gigantic,
-.u-text-enormous {
+.u-text-huge {
   font-family: var(--font-heading);
 }
 
-.u-text-accent::after {
-  background-image: url('/images/Squiggle-Accent.svg');
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  content: '';
-  display: block;
-  height: 8px;
-  margin-top: 1.25rem;
-  width: 80px;
+.u-text-gigantic,
+.u-text-enormous,
+.u-text-display {
+  font-family: var(--font-display);
+}
+
+.u-text-title {
+  font-family: var(--font-accent);
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-uppercase {
+  text-transform: uppercase;
+}
+
+.u-text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-fg-primary);
 }
 
 
-/* Seperators */
+/* Borders */
+
+.u-border-top-accent-alternate {
+  border-top: solid 1px var(--color-fg-subtle-alternate);
+}
+
+.u-border-bottom-accent-alternate {
+  border-bottom: solid 1px var(--color-fg-subtle-alternate);
+}
+
+.u-border-vertical-accent-alternate {
+  border-bottom: solid 1px var(--color-fg-subtle-alternate);
+  border-top: solid 1px var(--color-fg-subtle-alternate);
+}
+
+
+/* Separators */
 
 .u-separator-primary,
 .u-separator-alternate {
@@ -49,11 +85,11 @@ h1, h2, h3, h4, h5, h6,
 .u-bg-pattern-diagonal {
   background-image: linear-gradient(
     -45deg,
-    transparent                     000.00%,
-    transparent                     043.74%,
-    var(--color-bg-pattern-primary) 043.75%,
-    var(--color-bg-pattern-primary) 056.25%,
-    transparent                     056.26%,
+    transparent                       0.00%,
+    transparent                      43.74%,
+    var(--color-bg-pattern-primary)  43.75%,
+    var(--color-bg-pattern-primary)  56.25%,
+    transparent                      56.26%,
     transparent                     100.00%
   );
   background-repeat: repeat;
@@ -78,46 +114,61 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-.u-background-noise,
+.u-bg-noise,
 .u-overlay-noise {
   overflow: hidden;
   position: relative;
   z-index: 1;
 }
 
-.u-background-noise::before,
+.u-bg-noise::before,
 .u-overlay-noise::before {
   animation: noise .4s infinite;
   background-repeat: repeat;
-  background-size: 400px auto;
   content: '';
   height: 200%;
+  left: -50%;
   mix-blend-mode: multiply;
-  opacity: 0.8;
+  opacity: 0.4;
+  pointer-events: none;
   position: absolute;
   top: -50%;
   width: 200%;
 }
 
-.u-bg-noise-background::before {
-  background-image: url("/images/Noise-Main-Solid.svg");
-  opacity: 0.8;
+.u-bg-noise::before {
+  background-color: var(--color-bg);
+  background-image: url("/images/Noise-Main-Clear.svg");
+  background-size: 400px auto;
   z-index: -1;
 }
 
 .u-overlay-noise::before {
   background-image: url("/images/Noise-Main-Clear.svg");
-  opacity: 0.4;
-  pointer-events: none;
+  background-size: 400px auto;
   z-index: 1;
+}
+
+
+/* Animations */
+
+.u-animation-wave {
+  animation: wave ease-in-out 3s infinite;
+  transform-origin: 50% 80%;
 }
 
 
 /* Keyframes */
 
 @keyframes noise {
-  00.00% { transform:translate(0, 0) }
-  49.99% { transform:translate(0, 0) }
-  50.00% { transform:translate(-10%, 10%) }
-  99.99% { transform:translate(-10%, 10%) }
+   0.00% { transform: translate(0, 0) }
+  49.99% { transform: translate(0, 0) }
+  50.00% { transform: translate(-10%, 10%) }
+  99.99% { transform: translate(-10%, 10%) }
+}
+
+@keyframes wave {
+    0% { transform: rotate( -35deg) }
+   50% { transform: rotate(  35deg) }
+  100% { transform: rotate( -35deg) }
 }

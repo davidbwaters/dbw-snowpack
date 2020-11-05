@@ -13,6 +13,7 @@ export class TopBar extends LitElement {
       :host {
         display: flex;
         justify-content: space-between;
+        max-height: 72px;
         padding: 1.5rem;
         position: fixed;
         width: 100%;
