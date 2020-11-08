@@ -10,17 +10,20 @@ h1, h2, h3, h4, h5, h6,
 .u-text-large,
 .u-text-huge {
   font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
 }
 
 .u-text-gigantic,
 .u-text-enormous,
 .u-text-display {
   font-family: var(--font-display);
+  font-weight: var(--font-display-weight);
 }
 
 .u-text-title {
   font-family: var(--font-accent);
   font-size: .75rem;
+  font-weight: var(--font-accent-weight);
   text-transform: uppercase;
 }
 

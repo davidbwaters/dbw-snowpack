@@ -129,7 +129,7 @@ render(
           </div>
         </div>
         <div class="c-hero__heading">
-          <h2 class="u-text-huge">
+          <h2 class="u-text-large-3">
             Building digital solutions to promote growth.
             <c-squiggle></c-squiggle>
           </h2>
@@ -155,20 +155,20 @@ render(
       </footer>
     </div>
     <section>
-      <header class="u-padding-vertical-huge u-bg-noise u-text-center">
-        <h3 class="u-text-gigantic u-text-display u-text-uppercase u-text-outline">
+      <header class="u-padding-vertical-5 u-bg-noise u-text-center">
+        <h3 class="u-text-large-4 u-text-display u-text-uppercase u-text-outline">
           Skills
         </h3>
         <c-squiggle></c-squiggle>
       </header>
-      <div class="u-border-vertical-accent-alternate u-padding-vertical-large u-padding-horizontal-large u-text-center u-bg-noise">
+      <div class="u-border-vertical-accent-alternate u-padding-vertical-3 u-padding-horizontal-3 u-text-center u-bg-noise">
         Skills, tools of the trade, and technologies I enjoy working with.
       </div>
       <ul class="c-skill-list">
         <li class="c-skill-list-skill">
           <img class="c-skill-list-image" src="images/Elephant.png" alt="elephant">
           <div class="c-skill-list-text">
-            <h4 class="u-text-title">
+            <h4 class="c-skill-list-title u-text-title">
               Web Platform
             </h4>
             <span class="c-skill-list-gap"></span>
@@ -181,7 +181,7 @@ render(
         <li class="c-skill-list-skill">
           <img class="c-skill-list-image" src="images/Lion.png" alt="elephant">
           <div class="c-skill-list-text">
-            <h4 class="u-text-title">
+            <h4 class="c-skill-list-title u-text-title">
               Design
             </h4>
             <span class="c-skill-list-gap"></span>
@@ -194,7 +194,7 @@ render(
         <li class="c-skill-list-skill">
           <img class="c-skill-list-image" src="images/Squirrel.png" alt="elephant">
           <div class="c-skill-list-text">
-            <h4 class="u-text-title">
+            <h4 class="c-skill-list-title u-text-title">
               Development
             </h4>
             <span class="c-skill-list-gap"></span>
@@ -207,7 +207,7 @@ render(
         <li class="c-skill-list-skill">
           <img class="c-skill-list-image" src="images/Camel.png" alt="elephant">
           <div class="c-skill-list-text">
-            <h4 class="u-text-title">
+            <h4 class="c-skill-list-title u-text-title">
               Consultation
             </h4>
             <span class="c-skill-list-gap"></span>

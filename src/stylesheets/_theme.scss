@@ -10,11 +10,16 @@
   --spacing-responsive-x: calc(.25rem + 1vw);
   --spacing-responsive-y: calc(.25rem + 1vh);
 
-  --font-primary: 'gangster_grotesklight';
-  --font-primary-medium: 'gangster_groteskregular';
-  --font-accent:  'league_monolight';
+  --font-primary: 'work_sanslight';
+  --font-primary-weight: 'normal';
+  --font-primary-bolder: 'work_sansregular';
+  --font-primary-bolder-weight: 'normal';
+  --font-accent: 'league_monoregular';
+  --font-accent-weight: 'normal';
   --font-display: 'syneextrabold';
+  --font-display-weight: 'normal';
   --font-heading: 'synebold';
+  --font-heading-weight: 'normal';
 
   --theme-dark-opacity:  0;
   --theme-light-opacity: 0;
