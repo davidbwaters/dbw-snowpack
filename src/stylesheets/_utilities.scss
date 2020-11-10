@@ -66,15 +66,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-/* Separators */
-
-.u-separator-primary,
-.u-separator-alternate {
-  border: none;
-  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-primary);
-  width: 100%;
-}
-
 
 /* Theme Fill */
 
@@ -83,39 +74,84 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-/* Backgrounds & Overlays */
+/* Separators, Backgrounds & Overlays */
 
-.u-bg-pattern-diagonal {
-  background-image: linear-gradient(
-    -45deg,
-    transparent                       0.00%,
-    transparent                      43.74%,
-    var(--color-bg-pattern-primary)  43.75%,
-    var(--color-bg-pattern-primary)  56.25%,
-    transparent                      56.26%,
-    transparent                     100.00%
-  );
+.u-bg-pattern-diagonal-tight,
+.u-bg-pattern-diagonal-tight-alternate,
+.u-separator-primary,
+.u-separator-alternate {
   background-repeat: repeat;
   background-position: 0 0;
-  background-size: .275rem .275rem;
+  background-size: .225rem .225rem;
+  height: .5rem;
 }
 
 .u-bg-pattern-diagonal-tight,
 .u-separator-primary {
   background-image: linear-gradient(
     -45deg,
-    transparent                     000.00%,
-    transparent                     037.49%,
-    var(--color-bg-pattern-primary) 037.50%,
-    var(--color-bg-pattern-primary) 062.5%,
-    transparent                     062.51%,
-    transparent                     100.00%
+    var(--color-bg-pattern-primary)   0.00%,
+    var(--color-bg-pattern-primary)  12.50%,
+    transparent              12.51%,
+    transparent              37.49%,
+    var(--color-bg-pattern-primary)  37.50%,
+    var(--color-bg-pattern-primary)  62.50%,
+    transparent              62.51%,
+    transparent              87.49%,
+    var(--color-bg-pattern-primary)  87.50%,
+    var(--color-bg-pattern-primary) 100.00%
+  );
+}
+
+.u-bg-pattern-diagonal-tight-alternate,
+.u-separator-alternate {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-bg-pattern-alternate)   0.00%,
+    var(--color-bg-pattern-alternate)  12.50%,
+    transparent                        12.51%,
+    transparent                        37.49%,
+    var(--color-bg-pattern-alternate)  37.50%,
+    var(--color-bg-pattern-alternate)  62.50%,
+    transparent                        62.51%,
+    transparent                        87.49%,
+    var(--color-bg-pattern-alternate)  87.50%,
+    var(--color-bg-pattern-alternate) 100.00%
+  );
+}
+
+.u-separator-primary,
+.u-separator-alternate {
+  border: none;
+  width: 100%;
+}
+
+.u-separator-primary {
+  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-primary);
+}
+
+.u-separator-alternate {
+  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-alternate);
+}
+
+.u-bg-pattern-diagonal {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-bg-pattern-primary)   0.00%,
+    var(--color-bg-pattern-primary)   6.24%,
+    transparent                       6.25%,
+    transparent                      43.74%,
+    var(--color-bg-pattern-primary)  43.75%,
+    var(--color-bg-pattern-primary)  56.25%,
+    transparent                      56.26%,
+    transparent                      93.74%,
+    var(--color-bg-pattern-primary)  93.75%,
+    var(--color-bg-pattern-primary) 100.00%
   );
   background-repeat: repeat;
   background-position: 0 0;
-  background-size: .225rem .225rem;
+  background-size: .275rem .275rem;
 }
-
 
 .u-bg-noise,
 .u-overlay-noise {

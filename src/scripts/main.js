@@ -155,70 +155,74 @@ render(
       </footer>
     </div>
     <section>
-      <header class="u-padding-vertical-5 u-bg-noise u-text-center">
+      <header class="u-padding-top-6 u-padding-bottom-5 u-bg-noise u-text-center">
         <h3 class="u-text-large-4 u-text-display u-text-uppercase u-text-outline">
           Skills
         </h3>
         <c-squiggle></c-squiggle>
       </header>
-      <div class="u-border-vertical-accent-alternate u-padding-vertical-3 u-padding-horizontal-3 u-text-center u-bg-noise">
+      <div class="u-border-top-accent-alternate u-padding-vertical-3 u-padding-horizontal-3 u-text-center u-bg-noise">
         Skills, tools of the trade, and technologies I enjoy working with.
       </div>
       <ul class="c-skill-list">
-        <li class="c-skill-list-skill">
-          <img class="c-skill-list-image" src="images/Elephant.png" alt="elephant">
-          <div class="c-skill-list-text">
-            <h4 class="c-skill-list-title u-text-title">
+        <li class="c-skill-list__skill">
+          <img class="c-skill-list__image" src="images/Elephant.png" alt="elephant">
+          <div class="c-skill-list__text">
+            <h4 class="c-skill-list__title u-text-title">
               Web Platform
             </h4>
-            <span class="c-skill-list-gap"></span>
-            <span class="c-skill-list-number u-text-title">01</span>
-            <span class="c-skill-list-description">
+            <span class="c-skill-list__gap"></span>
+            <span class="c-skill-list__number u-text-title">01</span>
+            <span class="c-skill-list__description">
               Web Components, Applications, #UseThePlatform
             </span>
           </div>
         </li>
-        <li class="c-skill-list-skill">
-          <img class="c-skill-list-image" src="images/Lion.png" alt="elephant">
-          <div class="c-skill-list-text">
-            <h4 class="c-skill-list-title u-text-title">
+        <li class="c-skill-list__skill">
+          <img class="c-skill-list__image" src="images/Lion.png" alt="elephant">
+          <div class="c-skill-list__text">
+            <h4 class="c-skill-list__title u-text-title">
               Design
             </h4>
-            <span class="c-skill-list-gap"></span>
-            <span class="c-skill-list-number u-text-title">02</span>
-            <span class="c-skill-list-description">
+            <span class="c-skill-list__gap"></span>
+            <span class="c-skill-list__number u-text-title">02</span>
+            <span class="c-skill-list__description">
               Figma, Sketch, Adobe CS**
             </span>
           </div>
         </li>
-        <li class="c-skill-list-skill">
-          <img class="c-skill-list-image" src="images/Squirrel.png" alt="elephant">
-          <div class="c-skill-list-text">
-            <h4 class="c-skill-list-title u-text-title">
+        <li class="c-skill-list__skill">
+          <img class="c-skill-list__image" src="images/Squirrel.png" alt="elephant">
+          <div class="c-skill-list__text">
+            <h4 class="c-skill-list__title u-text-title">
               Development
             </h4>
-            <span class="c-skill-list-gap"></span>
-            <span class="c-skill-list-number u-text-title">03</span>
-            <span class="c-skill-list-description">
+            <span class="c-skill-list__gap"></span>
+            <span class="c-skill-list__number u-text-title">03</span>
+            <span class="c-skill-list__description">
               JS/ES*, Node.js, Jamstack
             </span>
           </div>
         </li>
-        <li class="c-skill-list-skill">
-          <img class="c-skill-list-image" src="images/Camel.png" alt="elephant">
-          <div class="c-skill-list-text">
-            <h4 class="c-skill-list-title u-text-title">
+        <li class="c-skill-list__skill">
+          <img class="c-skill-list__image" src="images/Camel.png" alt="elephant">
+          <div class="c-skill-list__text">
+            <h4 class="c-skill-list__title u-text-title">
               Consultation
             </h4>
-            <span class="c-skill-list-gap"></span>
-            <span class="c-skill-list-number u-text-title">04</span>
-            <span class="c-skill-list-description">
+            <span class="c-skill-list__gap"></span>
+            <span class="c-skill-list__number u-text-title">04</span>
+            <span class="c-skill-list__description">
               Not sure where to start? I can help!
             </span>
           </div>
         </li>
       </ul>
+      <hr class="u-separator-alternate c-hero__bottom">
     </section>
+    <footer class="u-padding-vertical-4 u-padding-horizontal-3">
+      David B Waters 2020.
+    </footer>
   `, document.body
 )
 

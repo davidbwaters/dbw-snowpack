@@ -2220,7 +2220,6 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--color-fg-primary);
-  animation: fade-in 1s once;
   opacity: 0.05;
   position: absolute;
   top: 0;
@@ -2488,23 +2487,23 @@ c-theme-switch,
     grid-template-columns: 50% 50%;
   }
 }
-.c-skill-list-skill {
+.c-skill-list__skill {
   align-items: flex-end;
-  border-bottom: solid 1px var(--color-fg-subtle-alternate);
+  border-top: solid 1px var(--color-fg-subtle-alternate);
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
 
 @media (min-width: 45em) {
-  .c-skill-list-skill:nth-child(odd) {
+  .c-skill-list__skill:nth-child(odd) {
     border-right: solid 1px var(--color-fg-subtle-alternate);
   }
 }
-[data-theme=light] .c-skill-list-image {
+[data-theme=light] .c-skill-list__image {
   mix-blend-mode: luminosity;
 }
 
-.c-skill-list-text {
+.c-skill-list__text {
   column-gap: 1rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -2514,11 +2513,11 @@ c-theme-switch,
   row-gap: 0.5rem;
 }
 
-.c-skill-list-gap {
+.c-skill-list__gap {
   background-image: linear-gradient(0deg, transparent 0%, transparent 46.87%, var(--color-fg-primary) 46.88%, var(--color-fg-primary) 53.22%, transparent 53.23%, transparent 100%);
 }
 
-.c-skill-list-description {
+.c-skill-list__description {
   grid-column-start: 1;
   grid-column-end: 4;
 }
@@ -2604,33 +2603,51 @@ h1, h2, h3, h4, h5, h6,
   border-top: solid 1px var(--color-fg-subtle-alternate);
 }
 
-/* Separators */
-.u-separator-primary,
-.u-separator-alternate {
-  border: none;
-  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-primary);
-  width: 100%;
-}
-
 /* Theme Fill */
 .u-theme-fill {
   fill: var(--color-fg-primary);
 }
 
-/* Backgrounds & Overlays */
-.u-bg-pattern-diagonal {
-  background-image: linear-gradient(-45deg, transparent 0%, transparent 43.74%, var(--color-bg-pattern-primary) 43.75%, var(--color-bg-pattern-primary) 56.25%, transparent 56.26%, transparent 100%);
+/* Separators, Backgrounds & Overlays */
+.u-bg-pattern-diagonal-tight,
+.u-bg-pattern-diagonal-tight-alternate,
+.u-separator-primary,
+.u-separator-alternate {
   background-repeat: repeat;
   background-position: 0 0;
-  background-size: 0.275rem 0.275rem;
+  background-size: 0.225rem 0.225rem;
+  height: 0.5rem;
 }
 
 .u-bg-pattern-diagonal-tight,
 .u-separator-primary {
-  background-image: linear-gradient(-45deg, transparent 0%, transparent 37.49%, var(--color-bg-pattern-primary) 37.5%, var(--color-bg-pattern-primary) 62.5%, transparent 62.51%, transparent 100%);
+  background-image: linear-gradient(-45deg, var(--color-bg-pattern-primary) 0%, var(--color-bg-pattern-primary) 12.5%, transparent 12.51%, transparent 37.49%, var(--color-bg-pattern-primary) 37.5%, var(--color-bg-pattern-primary) 62.5%, transparent 62.51%, transparent 87.49%, var(--color-bg-pattern-primary) 87.5%, var(--color-bg-pattern-primary) 100%);
+}
+
+.u-bg-pattern-diagonal-tight-alternate,
+.u-separator-alternate {
+  background-image: linear-gradient(-45deg, var(--color-bg-pattern-alternate) 0%, var(--color-bg-pattern-alternate) 12.5%, transparent 12.51%, transparent 37.49%, var(--color-bg-pattern-alternate) 37.5%, var(--color-bg-pattern-alternate) 62.5%, transparent 62.51%, transparent 87.49%, var(--color-bg-pattern-alternate) 87.5%, var(--color-bg-pattern-alternate) 100%);
+}
+
+.u-separator-primary,
+.u-separator-alternate {
+  border: none;
+  width: 100%;
+}
+
+.u-separator-primary {
+  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-primary);
+}
+
+.u-separator-alternate {
+  box-shadow: inset 0 0 0 1px var(--color-fg-subtle-alternate);
+}
+
+.u-bg-pattern-diagonal {
+  background-image: linear-gradient(-45deg, var(--color-bg-pattern-primary) 0%, var(--color-bg-pattern-primary) 6.24%, transparent 6.25%, transparent 43.74%, var(--color-bg-pattern-primary) 43.75%, var(--color-bg-pattern-primary) 56.25%, transparent 56.26%, transparent 93.74%, var(--color-bg-pattern-primary) 93.75%, var(--color-bg-pattern-primary) 100%);
   background-repeat: repeat;
   background-position: 0 0;
-  background-size: 0.225rem 0.225rem;
+  background-size: 0.275rem 0.275rem;
 }
 
 .u-bg-noise,
