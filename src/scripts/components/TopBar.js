@@ -43,6 +43,7 @@ export class TopBar extends LitElement {
       ::slotted([slot="link"]) {
         padding: 0 .25rem;
         text-align: center;
+        text-decoration: none;
         width: 1.75rem;
       }
 

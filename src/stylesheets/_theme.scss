@@ -20,6 +20,8 @@
   --font-display-weight: 'normal';
   --font-heading: 'synebold';
   --font-heading-weight: 'normal';
+  --font-mono: 'league_monoregular';
+  --font-mono-weight: 'normal';
 
   --theme-dark-opacity:  0;
   --theme-light-opacity: 0;
@@ -27,30 +29,30 @@
 
 body {
   background-color: var(--color-bg);
-  color: var(--color-fg-primary);
+  color: var(--color-fg);
   font-family: var(--font-primary);
 }
 
 [data-theme=dark] {
   --color-bg: #6E4ECE;
-  --color-fg-primary: #F1EDFF;
+  --color-fg: #F1EDFF;
   --color-fg-accent: #95D6EB;
-  --color-fg-subtle-primary: #46378F;
+  --color-fg-subtle: #46378F;
   --color-fg-subtle-alternate: #897DD1;
-  --color-bg-pattern-primary: rgba(0,0,0,.25);
+  --color-bg-pattern: rgba(0,0,0,.25);
   --color-bg-pattern-alternate: rgba(255,255,255,.25);
-  --color-bg-overlay-primary: rgba(0,0,0,0.04);
+  --color-bg-overlay: rgba(0,0,0,0.02);
   --theme-dark-opacity: 1;
 }
 
 [data-theme=light] {
   --color-bg: #B3B3E7;
-  --color-fg-primary: #342469;
+  --color-fg: #342469;
   --color-fg-accent: #6E4ECE;
-  --color-fg-subtle-primary: #46378F;
+  --color-fg-subtle: #46378F;
   --color-fg-subtle-alternate: #46378F;
-  --color-bg-pattern-primary: rgba(0,0,0,.25);
+  --color-bg-pattern: rgba(0,0,0,.25);
   --color-bg-pattern-alternate: rgba(0,0,0,.25);
-  --color-bg-overlay-primary: rgba(255,255,255,.04);
+  --color-bg-overlay: rgba(255,255,255,.02);
   --theme-light-opacity: 1;
 }

@@ -13,11 +13,13 @@
 @use 'node_modules/@substructure/objects-wrapper';
 @use 'node_modules/@substructure/utilities-sizing';
 @use 'node_modules/@substructure/utilities-spacing';
+@use 'node_modules/@substructure/utilities-text-align';
 @use 'node_modules/@substructure/utilities-text-sizing';
 
 @use 'theme' as elements-base-local;
 @use 'components-button';
 @use 'components-hero';
+@use 'components-page-footer';
 @use 'components-skill-list';
 @use 'elements-text' as elements-text-local;
 @use 'utilities';

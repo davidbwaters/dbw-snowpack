@@ -4,17 +4,21 @@
 
 
 body {
-  color: var(--color-fg-primary);
+  color: var(--color-fg);
   font-family: var(--font-primary);
   font-weight: var(--font-primary-weight);
 }
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
+}
+
+strong {
+  font-family: var(--font-primary-bolder);
+  font-weight: var(--font-primary-bolder-weight);
 }

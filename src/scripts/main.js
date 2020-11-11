@@ -28,7 +28,6 @@ WebFont.load({
 })
 
 
-
 render(
   html`
     <c-top-bar>
@@ -151,17 +150,17 @@ render(
         </div>
         <div class="c-hero__arrow">
         </div>
-        <hr class="u-separator-primary c-hero__bottom">
+        <hr class="u-separator c-hero__bottom">
       </footer>
     </div>
     <section>
-      <header class="u-padding-top-6 u-padding-bottom-5 u-bg-noise u-text-center">
+      <header class="u-padding-top-6 u-padding-bottom-5 u-bg-noise u-text-align-center">
         <h3 class="u-text-large-4 u-text-display u-text-uppercase u-text-outline">
           Skills
         </h3>
         <c-squiggle></c-squiggle>
       </header>
-      <div class="u-border-top-accent-alternate u-padding-vertical-3 u-padding-horizontal-3 u-text-center u-bg-noise">
+      <div class="u-border-top-accent-alternate u-padding-vertical-3 u-padding-horizontal-3 u-text-align-center u-bg-noise">
         Skills, tools of the trade, and technologies I enjoy working with.
       </div>
       <ul class="c-skill-list">
@@ -218,10 +217,25 @@ render(
           </div>
         </li>
       </ul>
-      <hr class="u-separator-alternate c-hero__bottom">
+      <!--
+        <hr class="u-separator-alternate c-hero__bottom">
+      -->
     </section>
-    <footer class="u-padding-vertical-4 u-padding-horizontal-3">
-      David B Waters 2020.
+    <footer class="c-page-footer u-bg-noise">
+      <hr class="u-separator-alternate u-margin-0">
+      <div class="c-page-footer__upper u-text-large-1">
+        Made with <3 by David B Waters in 2020.
+      </div>
+      <div class="c-page-footer__lower">
+        <small class="u-text-bolder">
+          This site's source code is freely available under the MIT license.
+          <a href="https://github.com/davidbwaters/dbw-snowpack" alt="repo link">
+            here 
+          </a>
+          <br/>
+          Stay tuned! It's still very much a work-in-progress.
+        </small>
+      </div>
     </footer>
   `, document.body
 )
@@ -229,6 +243,6 @@ render(
 
 Scrambler({
   target: '[data-scrambler]',
-  random: [1000,1000],
+  random: [1000, 1000],
   speed: 60
 })
