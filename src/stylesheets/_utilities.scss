@@ -12,10 +12,9 @@
   text-transform: uppercase;
 }
 
-.u-text-outline {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--color-fg);
+.u-tex-heading {
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
 }
 
 .u-text-display {
@@ -35,6 +34,12 @@
 
 .u-text-uppercase {
   text-transform: uppercase;
+}
+
+.u-text-outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--color-fg);
 }
 
 

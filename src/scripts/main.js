@@ -236,7 +236,7 @@ render(
       <ul class="c-work-list">
         <li class="c-work-list__item">
           <div data-sticky class="c-work-list__item-info">
-            <h4>Item One</h4>
+            <h4 class="u-text-bolder" >Item One</h4>
             <p>
               Item infomation and description.
             </p>

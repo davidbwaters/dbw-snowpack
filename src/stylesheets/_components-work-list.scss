@@ -4,8 +4,10 @@
 
 
 .c-work-list__item {
+  box-shadow: 0 0 0 1px var(--color-fg-subtle-alternate);
   display: grid;
   grid-template-rows: auto 1fr;
+  //padding-bottom: 1.5rem;
 }
 
 .c-work-list__item-preview {
@@ -14,14 +16,22 @@
 
 .c-work-list__item-info {
   background-color: var(--color-bg);
-  padding-bottom: 1.5rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
   padding-top: 3rem;
 }
 
-
 @media (min-width:45em) {
+  
+  .c-work-list__item {
+    margin-left:  5rem;
+    margin-right: 5rem;
+  }
+  
+  .c-work-list__item-info {
+    padding-bottom: 1.5rem;
+    padding-left:  1.5rem;
+    padding-right: 1.5rem;
+    padding-top:   1.5rem;
+  }
 
   .c-work-list__item-preview {
     grid-auto-flow: column
