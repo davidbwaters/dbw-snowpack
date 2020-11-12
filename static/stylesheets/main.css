@@ -2794,6 +2794,31 @@ c-theme-switch,
 }
 
 /*
+ *  Components - Work List
+ */
+.c-work-list__item {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.c-work-list__item-preview {
+  display: grid;
+}
+
+.c-work-list__item-info {
+  background-color: var(--color-bg);
+  padding-bottom: 1.5rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 3rem;
+}
+
+@media (min-width: 45em) {
+  .c-work-list__item-preview {
+    grid-auto-flow: column;
+  }
+}
+/*
  *  Elements - Text
  */
 body {
@@ -2940,7 +2965,6 @@ strong {
 
 .u-bg-noise::before,
 .u-overlay-noise::before {
-  animation: noise 0.4s infinite;
   background-repeat: repeat;
   content: "";
   height: 200%;

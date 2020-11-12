@@ -5,6 +5,7 @@
 import { html, render } from 'lit-html'
 import WebFont from 'webfontloader'
 import Scrambler from 'scrambling-letters'
+import stickybits from 'stickybits'
 import { TopBar } from './components/TopBar.js'
 import { ThemeSwitch } from './components/ThemeSwitch.js'
 import { Squiggle } from './components/Squiggle.js'
@@ -217,9 +218,37 @@ render(
           </div>
         </li>
       </ul>
+      <hr class="u-separator-alternate c-hero__bottom">
+    </section>
+    <section>
+      <header class="u-padding-top-6 u-padding-bottom-5 u-text-align-center u-border-bottom-accent-alternate u-bg-noise">
+        <h3 class="u-text-large-4 u-text-display u-text-uppercase u-text-outline">
+          Selected <br>
+          Works
+        </h3>
+        <c-squiggle></c-squiggle>
+      </header>
       <!--
-        <hr class="u-separator-alternate c-hero__bottom">
+      <div class="u-padding-vertical-3 u-padding-horizontal-3 u-text-align-center u-bg-noise">
+        Skills, tools of the trade, and technologies I enjoy working with.
+      </div>
       -->
+      <ul class="c-work-list">
+        <li class="c-work-list__item">
+          <div data-sticky class="c-work-list__item-info">
+            <h4>Item One</h4>
+            <p>
+              Item infomation and description.
+            </p>
+          </div>
+          <div class="c-work-list__item-preview">
+            <image src="images/Work-DBW-Logos-1.png" alt="Logos Dark BG">
+            </image>
+            <image src="images/Work-DBW-Logos-2.png" alt="Logos Light BG">
+            </image>
+          </div>
+        </li>
+      </ul>
     </section>
     <footer class="c-page-footer u-bg-noise">
       <hr class="u-separator-alternate u-margin-0">
@@ -228,10 +257,11 @@ render(
       </div>
       <div class="c-page-footer__lower">
         <small class="u-text-bolder">
-          This site's source code is freely available under the MIT license.
+          This site's source code is freely available under the MIT license
           <a href="https://github.com/davidbwaters/dbw-snowpack" alt="repo link">
             here 
           </a>
+          .
           <br/>
           Stay tuned! It's still very much a work-in-progress.
         </small>
@@ -240,6 +270,7 @@ render(
   `, document.body
 )
 
+stickybits('[data-sticky]');
 
 Scrambler({
   target: '[data-scrambler]',
