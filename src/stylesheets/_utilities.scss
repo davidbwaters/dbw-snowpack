@@ -59,6 +59,24 @@
 }
 
 
+/* Positioning */
+
+.u-position-relative {
+  position: relative;
+}
+
+
+/* Responsive Visibility */
+
+@media (max-width:35em) {
+
+  .u-hidden\@mobile {
+    display: none;
+    visibility: hidden;
+  }
+
+}
+
 
 /* Theme Fill */
 
@@ -119,6 +137,7 @@
   height: 1px;
   width: 100%;
 } 
+
 .u-separator-thin {
   background-color: var(--color-fg-subtle);
 }
@@ -130,23 +149,43 @@
 
 /* Backgrounds & Overlays */
 
+.u-bg-pattern-diagonal,
+.u-bg-pattern-diagonal-alternate {
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-size: .275rem .275rem;
+}
+
 .u-bg-pattern-diagonal {
   background-image: linear-gradient(
     -45deg,
     var(--color-bg-pattern)   0.00%,
     var(--color-bg-pattern)   6.24%,
-    transparent                       6.25%,
-    transparent                      43.74%,
+    transparent               6.25%,
+    transparent              43.74%,
     var(--color-bg-pattern)  43.75%,
     var(--color-bg-pattern)  56.25%,
-    transparent                      56.26%,
-    transparent                      93.74%,
+    transparent              56.26%,
+    transparent              93.74%,
     var(--color-bg-pattern)  93.75%,
     var(--color-bg-pattern) 100.00%
   );
-  background-repeat: repeat;
-  background-position: 0 0;
-  background-size: .275rem .275rem;
+}
+
+.u-bg-pattern-diagonal-alternate {
+  background-image: linear-gradient(
+    -45deg,
+    var(--color-bg-pattern-alternate)   0.00%,
+    var(--color-bg-pattern-alternate)   6.24%,
+    transparent                         6.25%,
+    transparent                        43.74%,
+    var(--color-bg-pattern-alternate)  43.75%,
+    var(--color-bg-pattern-alternate)  56.25%,
+    transparent                        56.26%,
+    transparent                        93.74%,
+    var(--color-bg-pattern-alternate)  93.75%,
+    var(--color-bg-pattern-alternate) 100.00%
+  );
 }
 
 .u-bg-pattern-diagonal-tight,
@@ -154,7 +193,6 @@
   background-repeat: repeat;
   background-position: 0 0;
   background-size: .225rem .225rem;
-  height: .5rem;
 }
 
 .u-bg-pattern-diagonal-tight {
@@ -193,12 +231,15 @@
 .u-overlay-noise {
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  
 }
 
 .u-bg-noise::before,
 .u-overlay-noise::before {
-  // animation: noise .4s infinite;
+  animation: noise .4s infinite;
+  backface-visibility: hidden;
+  background-image: url("/images/Noise-Main-Clear.svg");
+  background-size: 400px auto;
   background-repeat: repeat;
   content: '';
   height: 200%;
@@ -213,14 +254,10 @@
 
 .u-bg-noise::before {
   background-color: var(--color-bg);
-  background-image: url("/images/Noise-Main-Clear.svg");
-  background-size: 400px auto;
   z-index: -1;
 }
 
 .u-overlay-noise::before {
-  background-image: url("/images/Noise-Main-Clear.svg");
-  background-size: 400px auto;
   z-index: 1;
 }
 

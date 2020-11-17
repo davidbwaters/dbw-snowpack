@@ -7,12 +7,16 @@ import WebFont from 'webfontloader'
 import Scrambler from 'scrambling-letters'
 import stickybits from 'stickybits'
 import { TopBar } from './components/TopBar.js'
-import { ThemeSwitch } from './components/ThemeSwitch.js'
-import { Squiggle } from './components/Squiggle.js'
+import { ThemeSwitch } from './components/ThemeSwitch'
+import { Squiggle } from './components/Squiggle'
+import { GlitchImage } from './components/GlitchImage'
+import { Loader } from './components/Loader'
 
 customElements.define('c-top-bar', TopBar)
 customElements.define('c-theme-switch', ThemeSwitch)
 customElements.define('c-squiggle', Squiggle)
+customElements.define('c-glitch-image', GlitchImage)
+customElements.define('c-loader', Loader)
 
 WebFont.load({
   classes: false,
@@ -27,7 +31,6 @@ WebFont.load({
     timeout: 4000
   }
 })
-
 
 render(
   html`
@@ -140,16 +143,21 @@ render(
           <i class="c-icon c-icon--switch"></i>
         </c-theme-switch>
         <div class="c-hero__availability">
-          <i class="c-icon c-icon--hand u-animation-wave"></i>
+          <a class="c-icon c-icon--hand u-animation-wave" href="mailto:mrdavidbwaters@gmail.com"></a>
           <span>
             Available Now!
           </span>
         </div>
         <div class="c-hero__cta">
           <a class="c-button" href="mailto:mrdavidbwaters@gmail.com">Contact</a>
-          <span>Start Your Project!</span>
+          <span>
+            Start 
+            <span class="u-hidden@mobile">Your</span>
+            Project!
+          </span>
         </div>
         <div class="c-hero__arrow">
+          <i class="c-icon c-icon--arrow-down"></i>
         </div>
         <hr class="u-separator c-hero__bottom">
       </footer>
@@ -221,7 +229,14 @@ render(
       <hr class="u-separator-alternate c-hero__bottom">
     </section>
     <section>
-      <header class="u-padding-top-6 u-padding-bottom-5 u-text-align-center u-border-bottom-accent-alternate u-bg-noise">
+      <header class="
+        u-padding-top-6 
+        u-padding-bottom-5 
+        u-text-align-center 
+        u-border-bottom-accent-alternate 
+        u-bg-noise
+        u-z-index-3
+      ">
         <h3 class="u-text-large-4 u-text-display u-text-uppercase u-text-outline">
           Selected <br>
           Works
@@ -233,19 +248,72 @@ render(
         Skills, tools of the trade, and technologies I enjoy working with.
       </div>
       -->
-      <ul class="c-work-list">
+      <ul class="c-work-list u-bg-pattern-diagonal">
         <li class="c-work-list__item">
           <div data-sticky class="c-work-list__item-info">
-            <h4 class="u-text-bolder" >Item One</h4>
-            <p>
-              Item infomation and description.
-            </p>
+            <div class="c-work-list__item-info-inner">
+              <h4 class="c-work-list__item-info-title" >Item One</h4>
+              
+              <div class="c-work-list__item-info-taglist u-text-title">
+                Techologies: Adobe Illustrator
+              </div>
+              <div class="c-work-list__item-info-description">
+                <p>
+                  Item infomation and description.
+                </p>
+              </div>
+            </div>
           </div>
           <div class="c-work-list__item-preview">
-            <image src="images/Work-DBW-Logos-1.png" alt="Logos Dark BG">
-            </image>
-            <image src="images/Work-DBW-Logos-2.png" alt="Logos Light BG">
-            </image>
+            <c-glitch-image 
+              src="images/Work-DBW-Logos-1.png" 
+              glitch=2 alt="Logos Dark BG"
+              width=912
+              height=712
+            >
+            </c-glitch-image>
+            <c-glitch-image 
+              src="images/Work-DBW-Logos-2.png" 
+              glitch=2 alt="Logos Light BG"
+              width=912
+              height=712
+            >
+            </c-glitch-image>
+          </div>
+          <dialog open>
+            dialog
+          </dialog>
+        </li>
+        <li class="c-work-list__item">
+          <div data-sticky class="c-work-list__item-info">
+            <div class="c-work-list__item-info-inner">
+              <h4 class="c-work-list__item-info-title" >Item One</h4>
+              
+              <div class="c-work-list__item-info-taglist u-text-title">
+                Techologies: Adobe Illustrator
+              </div>
+              <div class="c-work-list__item-info-description">
+                <p>
+                  Item infomation and description.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="c-work-list__item-preview">
+            <c-glitch-image 
+              src="images/Work-DBW-Logos-1.png" 
+              glitch=2 alt="Logos Dark BG"
+              width=912
+              height=712
+            >
+            </c-glitch-image>
+            <c-glitch-image 
+              src="images/Work-DBW-Logos-2.png" 
+              glitch=2 alt="Logos Light BG"
+              width=912
+              height=712
+            >
+            </c-glitch-image>
           </div>
         </li>
       </ul>
@@ -267,13 +335,27 @@ render(
         </small>
       </div>
     </footer>
+    <c-loader>
+      <c-glitch-image
+        src="images/Loader-Image.svg"
+        active
+        glitch=1
+        width=100
+        height=100
+      >
+      </c-glitch-image>
+    </c-loader>
   `, document.body
 )
 
-stickybits('[data-sticky]');
+window.addEventListener('load', () => {
 
-Scrambler({
-  target: '[data-scrambler]',
-  random: [1000, 1000],
-  speed: 60
+  stickybits('[data-sticky]')
+
+  Scrambler({
+    target: '[data-scrambler]',
+    random: [1000, 1000],
+    speed: 60
+  })
+
 })

@@ -15,13 +15,15 @@
 @use 'node_modules/@substructure/utilities-spacing';
 @use 'node_modules/@substructure/utilities-text-align';
 @use 'node_modules/@substructure/utilities-text-sizing';
+@use 'node_modules/@substructure/utilities-z-index';
 
-@use 'theme' as elements-base-local;
+@use 'theme';
 @use 'components-button';
 @use 'components-hero';
 @use 'components-page-footer';
 @use 'components-skill-list';
 @use 'components-work-list';
+@use 'elements-base' as elements-base-local;
 @use 'elements-text' as elements-text-local;
 @use 'utilities';
 

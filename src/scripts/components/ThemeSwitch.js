@@ -75,11 +75,12 @@ export class ThemeSwitch extends LitElement {
   }
 
   _handleChange() {
-    const current = document.body.dataset.theme;
 
-    document.body.dataset.theme = current == 'dark' ?
-      'light' :
-      'dark'
+    const current = document.body.dataset.theme
+
+    document.body.dataset.theme = current === 'dark'
+      ? 'light'
+      : 'dark'
 
   }
 
