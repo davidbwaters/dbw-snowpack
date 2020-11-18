@@ -10,12 +10,14 @@ import { TopBar } from './components/TopBar.js'
 import { ThemeSwitch } from './components/ThemeSwitch'
 import { Squiggle } from './components/Squiggle'
 import { GlitchImage } from './components/GlitchImage'
+import { Modal } from './components/Modal'
 import { Loader } from './components/Loader'
 
 customElements.define('c-top-bar', TopBar)
 customElements.define('c-theme-switch', ThemeSwitch)
 customElements.define('c-squiggle', Squiggle)
 customElements.define('c-glitch-image', GlitchImage)
+customElements.define('c-modal', Modal)
 customElements.define('c-loader', Loader)
 
 WebFont.load({
@@ -279,10 +281,21 @@ render(
               height=712
             >
             </c-glitch-image>
+
           </div>
-          <dialog open>
-            dialog
-          </dialog>
+          <div class="c-work-list__item-lower">
+            <button 
+              class="c-button c-button--large c-button--block"
+              data-modal-target="modal-logos"
+            >
+              Show More
+            </button>
+            <c-modal 
+              data-modal-trigger="modal-logos"
+            >
+              dialog
+            </c-modal>
+          </div>
         </li>
         <li class="c-work-list__item">
           <div data-sticky class="c-work-list__item-info">

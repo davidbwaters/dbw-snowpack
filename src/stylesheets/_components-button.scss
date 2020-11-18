@@ -19,12 +19,28 @@
   box-shadow: 0 2px 0 var(--color-button-primary-shadow);
   color: var(--color-button-primary-fg);
   cursor: pointer;
+  font-family: var(--font-primary-bolder);
   font-size: .75rem;
   letter-spacing: .075em;
-  padding: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all .25s;
+  transition: all var(--transition-duration);
+}
+
+
+@media (min-width:45em) {
+
+  .c-button {
+    font-size: .85rem;
+    letter-spacing: .1em;
+    padding-left: .8rem;
+    padding-right: .8rem;
+  }
+
 }
 
 .c-button:active {
@@ -40,10 +56,26 @@
   background-color: var(--color-button-primary-bg-hover);
 }
 
-@media (min-width:45em) {
-  .c-button {
-    font-size: .85rem;
-    letter-spacing: .1em;
-    padding: .5rem .8rem;
-  }
+.c-button.is-expanded {
+  background-color: var(--color-button-primary-bg);
+  box-shadow:
+    0 0 0 100vmax
+    var(--color-button-primary-bg);
+  border-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-bg);
+  z-index: 9;
 }
+
+.c-button--large {
+  font-size: .9rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+
+.c-button--block {
+  width: 100%;
+}
+
+
+

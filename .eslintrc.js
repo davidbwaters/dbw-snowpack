@@ -3,5 +3,13 @@
 //
 
 module.exports = {
-  extends: '@davidbwaters/eslint-config'
+
+  extends: '@davidbwaters/eslint-config',
+
+  rules: {
+
+    'accessor-pairs': false
+
+  }
+
 }

@@ -2386,14 +2386,26 @@ small {
   box-shadow: 0 2px 0 var(--color-button-primary-shadow);
   color: var(--color-button-primary-fg);
   cursor: pointer;
+  font-family: var(--font-primary-bolder);
   font-size: 0.75rem;
   letter-spacing: 0.075em;
-  padding: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all 0.25s;
+  transition: all var(--transition-duration);
 }
 
+@media (min-width: 45em) {
+  .c-button {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+}
 .c-button:active {
   box-shadow: 0 0px 0 var(--color-button-primary-shadow);
   transform: translateY(2px);
@@ -2407,13 +2419,24 @@ small {
   background-color: var(--color-button-primary-bg-hover);
 }
 
-@media (min-width: 45em) {
-  .c-button {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    padding: 0.5rem 0.8rem;
-  }
+.c-button.is-expanded {
+  background-color: var(--color-button-primary-bg);
+  box-shadow: 0 0 0 100vmax var(--color-button-primary-bg);
+  border-color: var(--color-button-primary-bg);
+  color: var(--color-button-primary-bg);
+  z-index: 9;
 }
+
+.c-button--large {
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.c-button--block {
+  width: 100%;
+}
+
 /*
  *  Components - Hero
  */
@@ -2878,14 +2901,17 @@ c-theme-switch,
   grid-template-columns: 100%;
 }
 
+.c-work-list__item:first-child .c-work-list__item-info {
+  margin-top: -3.5rem;
+  padding-top: 3.5rem;
+}
+
 .c-work-list__item-info,
 .c-work-list__item-preview {
   background-color: var(--color-bg);
 }
 
 .c-work-list__item-info {
-  margin-top: -3.5rem;
-  padding-top: 3.5rem;
   z-index: 1;
 }
 
@@ -2902,11 +2928,11 @@ c-theme-switch,
 }
 
 .c-work-list__item-preview {
-  padding-bottom: 1.5rem;
+  border-bottom: solid 1px var(--color-fg-subtle-alternate);
 }
 
 @media (min-height: 35em) {
-  .c-work-list__item-info {
+  .c-work-list__item:first-child .c-work-list__item-info {
     margin-top: -4.5rem;
     padding-top: 4.5rem;
   }
@@ -2924,16 +2950,27 @@ c-theme-switch,
   }
 }
 @media (min-height: 35em) and (min-width: 45em) {
+  .c-work-list__item:first-child .c-work-list__item-info {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
   .c-work-list__item {
     margin-left: 5rem;
     margin-right: 5rem;
   }
-
-  .c-work-list__item-info {
-    margin-top: 0;
-    padding-top: 0;
-  }
 }
+.c-work-list__item-lower {
+  background-color: var(--color-bg);
+  border-bottom: solid 1px var(--color-fg-subtle-alternate);
+  margin-bottom: 1.5rem;
+  padding-bottom: calc(1rem + 2px);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  z-index: 9;
+}
+
 /*
  *  Elements - Base
  */

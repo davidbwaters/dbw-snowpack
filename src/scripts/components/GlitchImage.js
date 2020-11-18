@@ -11,15 +11,19 @@ export class GlitchImage extends LitElement {
     return css`
       :host {
         display: block;
-        min-height: 10px;
+        min-height: 1px;
         width: 100%;
       }
+
       .c-glitch-image {
-        height: var(--glitch-image-height);
+        height: 1px;
         margin: 0 auto;
         max-width: 100%;
-        min-height: 10px;
+        min-height: 1px;
         overflow: hidden;
+        padding-bottom: calc(
+          100% / var(--glitch-aspect-ratio) - 1px
+        );
         position: relative;
         width: var(--glitch-image-width);
       }
@@ -134,12 +138,12 @@ export class GlitchImage extends LitElement {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: calc(
-          100% + var(--glitch-image-gap-vertical) * 2
-        );
+        height: calc( 100% + var(--glitch-image-gap-vertical) * 2 );
         left: calc(-1 * var(--glitch-image-gap-horizontal));
         position: absolute;
-        top: calc(-1 * var(--glitch-image-gap-vertical));
+        top: calc(
+          var(--glitch-image-gap-vertical) * -1
+        );
         transform: translate3d(0, 0, 0);
         width: calc(
           100% + var(--glitch-image-gap-horizontal) * 2
@@ -819,6 +823,7 @@ export class GlitchImage extends LitElement {
     return {
       glitch: { type: String, attribute: true },
       src: { type: String, attribute: true },
+      active: { type: Boolean, attribute: true },
       aspectRatio: { type: Number },
       wrapper: { type: Object }
     }
@@ -830,90 +835,42 @@ export class GlitchImage extends LitElement {
     super()
 
     this.glitch = '1'
-
-    this._updateSize = () => {
-
-      const width = this.offsetWidth
-      const height = width / this.aspectRatio
-
-      this.wrapper.style.setProperty(
-        '--glitch-image-width', width + 'px'
-      )
-
-      this.wrapper.style.setProperty(
-        '--glitch-image-height', height + 'px'
-      )
-
-    }
+    this.active = false
+    this.aspectRatio = 1
 
   }
 
-  connectedCallback() {
+  firstUpdated() {
 
-    super.connectedCallback()
-
-    window.addEventListener('resize', this._updateSize)
-
-  }
-
-  disconnectedCallback() {
-
-    window.removeEventListener('resize', this._updateSize)
-    super.disconnectedCallback()
-
-  }
-
-  updated() {
-
+    const hasWidth = this.hasAttribute('width')
+    const hasHeight = this.hasAttribute('height')
+    const hasDimensions = hasWidth && hasHeight
 
     this.wrapper = this.shadowRoot.querySelector('.c-glitch-image')
 
-    if (this.hasAttribute('active')) {
+    if (this.active) {
 
-      if (this.getAttribute('active') !== false) {
-
-        this.wrapper.classList.add('is-glitching')
-
-      }
+      this.wrapper.classList.add('is-glitching')
 
     }
 
-    const wrapperStyles = getComputedStyle(this.wrapper)
+    if (hasDimensions) {
 
-    const gapHorizontal = parseInt(
-      wrapperStyles.getPropertyValue(
-        '--glitch-image-gap-horizontal'
-      )
-      , 10)
+      const imgWidth = this.getAttribute('width')
+      const imgHeight = this.getAttribute('height')
+      this.aspectRatio = imgWidth / imgHeight
 
-    const gapVertical = parseInt(
-      wrapperStyles.getPropertyValue(
-        '--glitch-image-gap-vertical'
-      )
-      , 10)
+    }
 
-    console.log('gv=' + gapVertical)
-    console.log('gh=' + gapHorizontal)
-
-    const imgWidth = parseInt(
-      this.getAttribute('width'), 10
+    this.wrapper.style.setProperty(
+      '--glitch-aspect-ratio',
+      this.aspectRatio
     )
 
-    const imgHeight = parseInt(
-      this.getAttribute('height'), 10
+    this.wrapper.style.setProperty(
+      '--glitch-image',
+      'url(' + this.src + ')'
     )
-
-    const width = imgWidth + (gapHorizontal * 2)
-    const height = imgHeight + (gapVertical * 2)
-
-    console.log('w=' + width)
-    console.log('h=' + height)
-
-    this.aspectRatio = imgWidth && imgHeight
-      ? imgWidth / imgHeight
-      : 1
-
-    this._updateSize()
 
   }
 
@@ -922,9 +879,6 @@ export class GlitchImage extends LitElement {
     return html`
       <div
         class="c-glitch-image c-glitch-image--style-${this.glitch}"
-        style="
-          --glitch-image: ${'url(' + this.src + ')'};
-        "
       >
         <div
           class="c-glitch-image__image"
