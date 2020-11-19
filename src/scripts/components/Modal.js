@@ -9,24 +9,29 @@ export class Modal extends LitElement {
   static get styles() {
 
     return css`
-      :root {
+      :host {
         --modal-transition-duration: var(--transition-duration);
-      }
-
-      .c-modal__content:not([open]) {
-        display: none;
-        visibility: hidden;
       }
 
       .c-modal__content {
         height: 100vh;
         left: 0;
         position: fixed;
+        transition: all var(--modal-transition-duration);
         top: 0;
         width: 100vw;
         z-index: 9;
       }
+      
+      .c-modal__content:not([open]) {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+      }
 
+      .c-modal__content.is-closing {
+        opacity: 0;
+      }
     `
 
   }
@@ -50,19 +55,28 @@ export class Modal extends LitElement {
 
   _setOpen() {
 
-    if (this.open && this.dialog) {
+    if (this.open && this._dialog) {
 
-      this.dialog.showModal()
+      this._dialog.showModal()
 
     }
 
   }
 
   _setClosed() {
-    const styles = window.getComputedStyle(this)
-    console.log(styles)
-    this.removeAttribute('open')
-    this.dialog.close()
+
+    this._dialog.classList.add('is-closing')
+
+    setTimeout( () => {
+
+      this._dialog.classList.remove('is-opening')
+      this.removeAttribute('open')
+      this._dialog.close()
+      this._triggerEl.classList.remove('is-expanded')
+      console.log(this._duration)
+
+    }, this._duration)
+
   }
 
   update() {
@@ -76,26 +90,35 @@ export class Modal extends LitElement {
   firstUpdated() {
 
     const target = this.dataset.modalTrigger
+
     const triggerSelector = 
       '[data-modal-target=' + target + ']'
-    
-    this.triggerEl = document.querySelector(
+
+    const hostStyles = window.getComputedStyle(this)
+
+    const durationSeconds = hostStyles.getPropertyValue(
+      '--modal-transition-duration'
+    )
+
+    this._duration = parseFloat(durationSeconds) * 1000
+
+    this._triggerEl = document.querySelector(
       triggerSelector
     )
 
-    if (this.triggerEl) {
+    this._dialog = this.shadowRoot.querySelector('dialog')
 
-      this.triggerEl.addEventListener('click', (e) => {
+    if (this._triggerEl) {
+
+      this._triggerEl.addEventListener('click', (e) => {
         
-        this.triggerEl.classList.add('is-expanded')
+        this._triggerEl.classList.add('is-expanded')
         
         this.setAttribute('open', '')
 
       })
 
     }
-
-    this.dialog = this.shadowRoot.querySelector('dialog')
 
     this._setOpen()
 
